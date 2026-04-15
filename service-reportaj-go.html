@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">Reportaj GO | Экономическая Ассамблея</title>
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .text-gradient-gold {
+        background: linear-gradient(to right, #e2c365, #f5df96);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .badge-gold {
+        display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px;
+        background-color: rgba(212, 175, 55, 0.1); padding: 0.25rem 0.75rem;
+        font-size: 0.75rem; font-weight: 500; color: #e2c365; border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: linear-gradient(to right, #d4af37, #e2c365);
+        color: var(--on-navy); font-weight: 600; padding: 0.625rem 1.25rem;
+        border-radius: 9999px; font-size: 0.875rem; transition: all 0.2s;
+        text-decoration: none;
+      }
+      .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+      
+      .btn-secondary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        border: 1px solid var(--outline); color: var(--on-navy);
+        padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem;
+        transition: all 0.2s; text-decoration: none; background: var(--surface-variant);
+      }
+      .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+
+      /* Reset inline opacity/transform for animations */
+      [style*="opacity:0"] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-['Inter']">
+
+    <main class="relative bg-navy-900 overflow-hidden">
+
+      <!-- Background decorations -->
+      <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900"></div>
+        <div class="absolute inset-0 opacity-40" style="background:radial-gradient(ellipse 60% 40% at 30% 20%, rgba(239, 68, 68, 0.1) 0%, transparent 50%), radial-gradient(ellipse 50% 30% at 70% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%)"></div>
+        <div class="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-20" style="transform:translateX(60%) translateY(10%)">
+          <div class="w-full h-full bg-gradient-to-br from-red-500/40 to-orange-500/20 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- HERO SECTION -->
+      <section class="relative pt-28 lg:pt-32 pb-12">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
+          <!-- Back link -->
+          <div class="mb-8">
+            <a class="inline-flex items-center gap-2 text-on-navy/40 hover:text-on-navy transition-colors text-sm" href="./services.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                <path d="m12 19-7-7 7-7"></path>
+                <path d="M19 12H5"></path>
+              </svg>
+              <span data-i18n="allServices">Все услуги</span>
+            </a>
+          </div>
+
+          <!-- Hero content -->
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-gold">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                    <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path>
+                    <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                  </svg>
+                  <span data-i18n="heroBadge">Медиа</span>
+                </span>
+                <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-medium flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
+                  <span data-i18n="heroStatus">LIVE</span>
+                </span>
+              </div>
+
+              <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-on-navy leading-tight mb-4">
+                <span data-i18n="heroTitlePrefix">Reportaj</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="heroTitleAccent">GO</span>
+              </h1>
+              <p class="text-lg text-on-navy/50 mb-6 leading-relaxed">
+                <span data-i18n="heroDesc">Продвигайте свой бизнес через профессиональный видеоконтент. Репортажи, интервью и документальные фильмы — всё в одном месте.</span>
+              </p>
+
+              <div class="flex flex-wrap gap-3">
+                <a class="btn-primary" href="./contacts.html">
+                  <span data-i18n="heroPrimaryBtn">Заказать</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+                <a class="btn-secondary" href="https://youtu.be/pwGThTieavI?si=s5t0WqOlSK6O6yT7" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+                  </svg>
+                  <span data-i18n="watchVideo">Смотреть видео</span>
+                </a>
+                <a class="btn-secondary" href="#content">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+                  </svg>
+                  <span data-i18n="heroSecondaryBtn">Примеры</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
+          <div class="mb-10">
+            <span class="text-red-400 font-mono text-xs tracking-widest uppercase mb-3 block" data-i18n="servicesTagline">Наши услуги</span>
+            <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy">
+              <span data-i18n="servicesTitlePrefix">Профессиональное</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="servicesTitleAccent">видеопроизводство</span>
+            </h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- Card 1: Videoreportages -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-red-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-red-400" aria-hidden="true">
+                  <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path>
+                  <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card1Title">Видеорепортажи</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card1Desc">Профессиональные видеорепортажи о вашей компании</p>
+            </div>
+
+            <!-- Card 2: Corporate shooting -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-red-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-red-400" aria-hidden="true">
+                  <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path>
+                  <circle cx="12" cy="13" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card2Title">Корпоративная съёмка</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card2Desc">Высококачественные фото и видеоматериалы</p>
+            </div>
+
+            <!-- Card 3: Interviews -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-red-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-red-400" aria-hidden="true">
+                  <path d="m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12"></path>
+                  <path d="M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5"></path>
+                  <circle cx="16" cy="7" r="5"></circle>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card3Title">Интервью</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card3Desc">Эксклюзивные интервью с руководителями и экспертами</p>
+            </div>
+
+            <!-- Card 4: Documentaries -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-red-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-red-400" aria-hidden="true">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M7 3v18"></path>
+                  <path d="M3 7.5h4"></path>
+                  <path d="M3 12h18"></path>
+                  <path d="M3 16.5h4"></path>
+                  <path d="M17 3v18"></path>
+                  <path d="M17 7.5h4"></path>
+                  <path d="M17 16.5h4"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card4Title">Документальные фильмы</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card4Desc">Фильмы об истории и успехах компании</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTENT TYPES SECTION -->
+      <section id="content" class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-red-500/[0.02] via-transparent to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
+          <div class="text-center mb-12">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm font-medium mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                <path d="M20 2v4"></path>
+                <path d="M22 4h-4"></path>
+                <circle cx="4" cy="20" r="2"></circle>
+              </svg>
+              <span data-i18n="contentBadge">Типы контента</span>
+            </span>
+            <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy mb-4">
+              <span data-i18n="contentTitlePrefix">Подходящий</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="contentTitleAccent">формат</span>
+            </h2>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-6">
+
+            <!-- Format 1: Business reportage (Popular) -->
+            <div class="relative p-6 rounded-2xl border bg-gradient-to-br from-red-500/10 to-orange-500/5 border-red-500/20">
+              <span class="absolute -top-3 left-6 px-3 py-1 rounded-full bg-red-500 text-on-navy text-xs font-medium" data-i18n="popularBadge">Популярно</span>
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-red-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-red-400" aria-hidden="true">
+                  <path d="m17 2-5 5-5-5"></path>
+                  <rect width="20" height="15" x="2" y="7" rx="2"></rect>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-2" data-i18n="format1Title">Бизнес-репортаж</h3>
+              <p class="text-on-navy/50 text-sm mb-4" data-i18n="format1Desc">Подробный репортаж о деятельности вашей компании</p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-red-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format1item1">Видео 3-5 минут</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-red-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format1item2">Съёмка в 4K</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-red-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format1item3">Профессиональный монтаж</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-red-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format1item4">Музыка и графика</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Format 2: Success story -->
+            <div class="relative p-6 rounded-2xl border bg-gradient-to-br from-white/[0.02] to-transparent border-on-navy/5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-on-navy/5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-on-navy/60" aria-hidden="true">
+                  <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6"></circle>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-2" data-i18n="format2Title">История успеха</h3>
+              <p class="text-on-navy/50 text-sm mb-4" data-i18n="format2Desc">Поделитесь своей историей успеха с миром</p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format2item1">Формат интервью</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format2item2">Архивные материалы</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format2item3">Анимационная графика</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format2item4">Субтитры (3 языка)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Format 3: Event coverage -->
+            <div class="relative p-6 rounded-2xl border bg-gradient-to-br from-white/[0.02] to-transparent border-on-navy/5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-on-navy/5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-on-navy/60" aria-hidden="true">
+                  <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path>
+                  <circle cx="12" cy="13" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-2" data-i18n="format3Title">Освещение мероприятий</h3>
+              <p class="text-on-navy/50 text-sm mb-4" data-i18n="format3Desc">Профессиональное освещение ваших мероприятий</p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format3item1">Многокамерная съёмка</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format3item2">Прямой эфир</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format3item3">Highlights видео</span>
+                </li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0 text-gold-400" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span data-i18n="format3item4">Фоторепортаж</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy mb-4">
+            <span data-i18n="ctaTitlePrefix">Расскажите свою</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="ctaTitleAccent">историю</span>
+          </h2>
+          <p class="text-on-navy/50 mb-8" data-i18n="ctaDesc">Усильте свой бренд с помощью профессионального видеоконтента. Команда Reportaj GO готова помочь вам создать сильную и убедительную историю.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a class="btn-primary" href="./contacts.html">
+              <span data-i18n="ctaButton">Заказать</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-surface-dim w-full py-12 px-6 md:px-12 border-t border-outline-variant/10">
+      <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto space-y-8 md:space-y-0">
+        <div class="text-left">
+          <div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+          <div class="text-on-surface-variant text-sm max-w-xs" data-i18n="copyright">© 2026 Economic Assembly of Uzbekistan.</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./index.html" data-i18n="navHome">Главная</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./about.html" data-i18n="navAbout">О нас</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./services.html" data-i18n="navServices">Услуги</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./contacts.html" data-i18n="navContacts">Контакты</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./i18n.js"></script>
+    <script src="./shared-nav.js?v=4"></script>
+  </body>
+</html>

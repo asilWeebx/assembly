@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News Management | Economic Assembly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#074e6e",
+                        "on-surface": "#dae2fd",
+                        "surface-container-low": "#131b2e",
+                        "on-background": "#dae2fd",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary-container": "#eba63d",
+                        "error-container": "#93000a",
+                        "surface-tint": "#93ccff",
+                        "inverse-surface": "#dae2fd",
+                        "primary-container": "#004a72",
+                        "background": "#0b1326",
+                        "tertiary": "#ffb954",
+                        "secondary-fixed-dim": "#97cdf3",
+                        "surface-container": "#171f33",
+                        "outline": "#8b9198",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "surface": "#0b1326",
+                        "on-secondary": "#00344c",
+                        "surface-variant": "#2d3449",
+                        "tertiary-container": "#623e00",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c0c7ce",
+                        "on-secondary-fixed": "#001e2e",
+                        "surface-container-high": "#222a3d",
+                        "on-primary-container": "#66bbfe",
+                        "outline-variant": "#41484d",
+                        "inverse-on-surface": "#283044",
+                        "primary-fixed-dim": "#93ccff",
+                        "on-primary-fixed-variant": "#004b73",
+                        "on-tertiary-fixed": "#291800",
+                        "on-tertiary": "#452b00",
+                        "on-primary-fixed": "#001d31",
+                        "surface-dim": "#0b1326",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-fixed": "#c7e7ff",
+                        "secondary": "#97cdf3",
+                        "on-secondary-fixed-variant": "#024c6c",
+                        "surface-bright": "#31394d",
+                        "primary-fixed": "#cce5ff",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffddb4",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "on-secondary-container": "#89bfe4",
+                        "on-primary": "#003351",
+                        "primary": "#93ccff",
+                        "inverse-primary": "#006397"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b1326; color: #dae2fd; }
+        .glass-card {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(147, 204, 255, 0.15);
+            border-left: 1px solid rgba(147, 204, 255, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .status-pill-published { background: rgba(147, 204, 255, 0.1); color: #93ccff; }
+        .status-pill-draft { background: rgba(218, 226, 253, 0.1); color: #c0c7ce; }
+        .status-pill-scheduled { background: rgba(255, 185, 84, 0.1); color: #ffb954; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- SideNavBar -->
+<aside style="display:none" class="h-screen w-72 fixed left-0 top-0 bg-[#0b1326] shadow-[40px_0_60px_-15px_rgba(0,0,0,0.3)] z-50 flex flex-col py-8 px-4 font-['Manrope'] antialiased tracking-tight">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-bold tracking-tighter text-[#93ccff]">Economic Assembly</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Republic of Uzbekistan</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-slate-400 hover:text-[#93ccff] hover:bg-[#93ccff]/5" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-slate-400 hover:text-[#93ccff] hover:bg-[#93ccff]/5" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Economic Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#93ccff] bg-[#93ccff]/10 border-r-2 border-[#93ccff] font-semibold" href="#">
+<span class="material-symbols-outlined">newspaper</span>
+<span class="font-medium">News Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-slate-400 hover:text-[#93ccff] hover:bg-[#93ccff]/5" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium">Assembly Members</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors text-slate-400 hover:text-[#93ccff] hover:bg-[#93ccff]/5" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">System Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pt-6 border-t border-[#93ccff]/10">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Generate Report
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header style="display:none" class="fixed top-0 right-0 w-[calc(100%-18rem)] h-16 bg-[#0b1326]/80 backdrop-blur-xl border-b border-[#93ccff]/15 z-40 flex items-center justify-between px-8 font-['Manrope'] font-medium">
+<div class="flex items-center gap-8">
+<h2 class="text-on-surface/70 text-sm tracking-wide">Admin Command Center</h2>
+<nav class="flex gap-6">
+<a class="text-slate-400 hover:text-white transition-all text-sm" href="#">Overview</a>
+<a class="text-[#93ccff] border-b-2 border-[#93ccff] pb-1 text-sm" href="#">Live Feed</a>
+<a class="text-slate-400 hover:text-white transition-all text-sm" href="#">Archives</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer group-hover:text-[#93ccff] transition-colors">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-[#93ccff] transition-colors">language</span>
+<div class="flex items-center gap-3 pl-4 border-l border-[#93ccff]/10">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alisher Karimov</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Chief Editor</p>
+</div>
+<img class="w-8 h-8 rounded-full border border-[#93ccff]/30 object-cover" data-alt="professional portrait of a middle-aged Central Asian man in a dark business suit against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMvLdInIFs444fJ_ogHj4xppxd_2ogjTV7_jwfqGc4H1EqtMfSpWRvluWxineE3d1U-XVCjfa4QfcF64oi676mvOa7N9mwWM5lRmPc_NqfYTCzTPZbaNQGqNy6C8o_qhg3fApgeCr5cyx2nAbtpBHJGXYL6F5ZmlyeVEvDkFiJ62tgiWS9hjbXOZbZyx8Hhdirly5uRKjTpy7nm70j0FO_dYZ8fxpUwBZp9VuqwyDnvTWXSzS6f_Rbx-KIGKgYPwFkOX1m0k42jjk"/>
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="pt-24 px-10 pb-12">
+<!-- Hero Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="text-[0.75rem] font-bold text-tertiary tracking-[0.2em] uppercase block mb-2">Internal Communications</span>
+<h1 class="text-[3rem] font-extrabold font-headline tracking-tighter text-on-surface leading-tight">News Management</h1>
+</div>
+<button class="mb-2 px-6 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl flex items-center gap-3 shadow-xl shadow-primary/10 transition-transform active:scale-95">
+<span class="material-symbols-outlined">edit_note</span>
+                    Create New Post
+                </button>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Main Editor / List Column -->
+<div class="col-span-8 space-y-6">
+<!-- Search & Filter Bar -->
+<div class="glass-card rounded-2xl p-4 flex items-center gap-4">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl pl-12 pr-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface placeholder:text-slate-600" placeholder="Search articles by title, author or tag..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-3 bg-surface-container-high rounded-xl text-slate-300 hover:text-white transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-3 bg-surface-container-high rounded-xl text-slate-300 hover:text-white transition-colors">
+<span class="material-symbols-outlined">sort</span>
+</button>
+</div>
+</div>
+<!-- Article List -->
+<div class="glass-card rounded-2xl overflow-hidden">
+<div class="p-6 border-b border-[#93ccff]/10 bg-surface-container-low/50">
+<h3 class="font-headline font-bold text-lg">Recent Articles</h3>
+</div>
+<div class="divide-y divide-[#93ccff]/5">
+<!-- Article Item -->
+<div class="p-6 flex items-center gap-6 hover:bg-white/5 transition-colors group">
+<div class="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="modern skyscraper architecture in Tashkent with a glass facade reflecting a blue sky during midday" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ZVRz7BKE0tHnFeVddi6yRw6pxp8TjHqL9VRhxE0CPuu6S5cEET04OPFxHpKhuJD654_JHnIcGCGfDF238Uux1wggHOytNs2B9YUdvCijqbZjd0YheJfCw6glaqxuFKNhKgu_yDmKJv80j0oJxdeA48H_P19lv99RNjgEvSCmMmjwvGAfJx0u9lqvCTEqY8MGuTzRsMFyUpsY9Wg5cYyT_zJJC2Z4Bs3oyOJ3GZi2qI8Wj7BkT6CM20nQ7fO_0qtjYGKGMjJ-Nis"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider status-pill-published">Published</span>
+<span class="text-[11px] text-slate-500 font-medium tracking-wide">Investment • 2 hours ago</span>
+</div>
+<h4 class="font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">Growth Projections for Tashkent IT Park 2024</h4>
+<p class="text-xs text-slate-500 mt-1">Author: Sanjar Rahmonov</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/20 rounded-lg text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 hover:bg-error/20 rounded-lg text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<!-- Article Item -->
+<div class="p-6 flex items-center gap-6 hover:bg-white/5 transition-colors group">
+<div class="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up of stock market data display with glowing blue and orange lines on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT-Wd0SWoGq5U5lYzAlKJNkeygBpmWzYcJ22-U7O2gL3VR6Et3Q6z5ZhxYy4x66Mi3Zn4qJYwve3XZmb4BawFPne-Pu9gmpWhRlQoCgVeucnx98dTLv42xJNQ4kz64Nyo4B4dECeuaTD6thhmc9HXlj_ggIzAMlsMWmEZQmOjtsiwdlOUpwLBOmE06pkt5S1gCi5NKlNZ_AsShrs3uHRpX8rj-mK7xlvXybDJ1Jzou_UuadXqbIRuS4ib7p7bBZmobXaLM_dvTPlQ"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider status-pill-scheduled">Scheduled</span>
+<span class="text-[11px] text-slate-500 font-medium tracking-wide">Finance • Oct 24, 09:00 AM</span>
+</div>
+<h4 class="font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">Quarterly Trade Balance Analysis: Regional Partners</h4>
+<p class="text-xs text-slate-500 mt-1">Author: Malika Azimova</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/20 rounded-lg text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 hover:bg-error/20 rounded-lg text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<!-- Article Item -->
+<div class="p-6 flex items-center gap-6 hover:bg-white/5 transition-colors group">
+<div class="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="rows of solar panels in a vast desert landscape under a clear bright sun representing renewable energy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6XS5JNY7mDfuZA0wYW1ERP7I2nFbPXcfLQH1VJ0EPR2S1BE8YNJWrj-e1zPcahoMaim3qo-rC-6BZYKyZugdbZaVoVqq6hYna2rlwaUagGmRj31KgNWVTbyfJwyd1T2FQ_uBCQ3-BA7Y-9naHRstvIHFOdpWoGPmrEFTJl2dmIoK2j6ZiHqNOdDt5cUIBrHd_zvMTV-9P_Xa6YLQXunKt4Jz2aC6rt1omOHXVic-T38EPkA9y-nEOctxtDf0emnqwT49aOFo8-RI"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider status-pill-draft">Draft</span>
+<span class="text-[11px] text-slate-500 font-medium tracking-wide">Sustainability • Saved 10m ago</span>
+</div>
+<h4 class="font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">Sustainable Energy Incentives for Local Factories</h4>
+<p class="text-xs text-slate-500 mt-1">Author: Alisher Karimov</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/20 rounded-lg text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-2 hover:bg-error/20 rounded-lg text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest flex justify-center">
+<button class="text-sm font-bold text-primary flex items-center gap-2 hover:underline">
+                                View All Articles
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Editor Panel -->
+<div class="col-span-4 space-y-6">
+<!-- Create/Edit Form Container -->
+<div class="glass-card rounded-3xl p-8 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 blur-[80px] rounded-full"></div>
+<div class="relative z-10">
+<h3 class="font-headline font-bold text-xl mb-6">Editor Workspace</h3>
+<form class="space-y-6">
+<div>
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Title of Publication</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface placeholder:text-slate-600" placeholder="Enter headline..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Category</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface appearance-none">
+<option>Business</option>
+<option>Investment</option>
+<option>Education</option>
+<option>Sustainability</option>
+</select>
+</div>
+<div>
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Publish Date</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-primary/40 text-on-surface" type="date"/>
+</div>
+</div>
+<div>
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Featured Image</label>
+<div class="w-full aspect-video rounded-2xl border-2 border-dashed border-[#93ccff]/15 bg-surface-container-lowest flex flex-col items-center justify-center gap-3 cursor-pointer hover:border-primary/40 transition-colors group">
+<span class="material-symbols-outlined text-3xl text-slate-600 group-hover:text-primary transition-colors">cloud_upload</span>
+<span class="text-[11px] text-slate-500">Drag &amp; Drop or <span class="text-primary font-bold">Browse</span></span>
+</div>
+</div>
+<div>
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-2">Content Editor</label>
+<div class="w-full rounded-2xl bg-surface-container-lowest overflow-hidden">
+<div class="flex items-center gap-2 p-2 bg-surface-container-high border-b border-[#93ccff]/10">
+<button class="p-1.5 hover:bg-white/10 rounded" type="button"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-1.5 hover:bg-white/10 rounded" type="button"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-1.5 hover:bg-white/10 rounded" type="button"><span class="material-symbols-outlined text-lg">link</span></button>
+<div class="w-px h-4 bg-white/10 mx-1"></div>
+<button class="p-1.5 hover:bg-white/10 rounded" type="button"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+<button class="p-1.5 hover:bg-white/10 rounded" type="button"><span class="material-symbols-outlined text-lg">image</span></button>
+</div>
+<textarea class="w-full bg-transparent border-none p-4 text-sm focus:ring-0 text-on-surface placeholder:text-slate-600" placeholder="Start writing the economic briefing..." rows="8"></textarea>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex-1 py-3 bg-surface-container-high text-on-surface font-semibold rounded-xl hover:bg-surface-bright transition-colors" type="button">
+                                        Save Draft
+                                    </button>
+<button class="flex-1 py-3 bg-primary text-on-primary font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform" type="submit">
+                                        Publish Now
+                                    </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Author Spotlight Card (Secondary Bento) -->
+<div class="glass-card rounded-3xl p-6 flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover grayscale brightness-125" data-alt="professional portrait of a middle-aged Central Asian man in a dark business suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDqwfrhVMk5ve6uK-QUrbZNrmZgLvPJf5Fyc1mNtRSguFoizaA4NmE9BaEmmEBpM1ItFEtVOZFx0ISIZE-Fg_cCanibvlODgRdgX0h6a-9YpUDgdAzqPZBvKq7DwP9avQ-nyjhg0S61TsqqWh454Nq6-JKI0mheq_5NcdhRLC5B5BfJswxJy-WuH2aC9o3K9WHoe4Ssi8taYLFU0cuExhnz9kX8wudcXvXQheDoUoj0mgtZp4mHxnHpENIiun05Xbgk8simbLju0c"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary border-2 border-[#0b1326] rounded-full"></div>
+</div>
+<div>
+<p class="text-[10px] text-tertiary font-bold uppercase tracking-widest">Active Editor</p>
+<h4 class="font-headline font-bold text-on-surface">Alisher Karimov</h4>
+<p class="text-[11px] text-slate-500">12 articles published this month</p>
+</div>
+<button class="ml-auto p-2 bg-white/5 rounded-full hover:bg-white/10">
+<span class="material-symbols-outlined text-lg text-slate-400">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Stats -->
+<div class="mt-12 grid grid-cols-4 gap-6">
+<div class="glass-card rounded-2xl p-6">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Total Reach</p>
+<div class="flex items-end justify-between">
+<h5 class="text-2xl font-extrabold font-headline text-on-surface">142.8k</h5>
+<span class="text-[10px] text-primary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +12%
+                        </span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Avg. Read Time</p>
+<div class="flex items-end justify-between">
+<h5 class="text-2xl font-extrabold font-headline text-on-surface">4:12m</h5>
+<span class="text-[10px] text-slate-500 font-bold">Steady</span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Engagement Rate</p>
+<div class="flex items-end justify-between">
+<h5 class="text-2xl font-extrabold font-headline text-on-surface">6.4%</h5>
+<span class="text-[10px] text-primary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +0.8%
+                        </span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Live Readers</p>
+<div class="flex items-end justify-between">
+<h5 class="text-2xl font-extrabold font-headline text-on-surface">842</h5>
+<div class="flex gap-1">
+<span class="w-1 h-1 rounded-full bg-primary/40"></span>
+<span class="w-1 h-1 rounded-full bg-primary/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary animate-pulse"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+  <script src="./shared-nav.js?v=4"></script>
+</body></html>

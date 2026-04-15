@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">Central Asia Smart City | Экономическая Ассамблея</title>
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .text-gradient-gold {
+        background: linear-gradient(to right, #e2c365, #f5df96);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .badge-gold {
+        display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px;
+        background-color: rgba(212,175,55,0.1); padding: 0.25rem 0.75rem;
+        font-size: 0.75rem; font-weight: 500; color: #e2c365; border: 1px solid rgba(212,175,55,0.2);
+      }
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: linear-gradient(to right, #d4af37, #e2c365);
+        color: var(--on-navy); font-weight: 600; padding: 0.625rem 1.25rem;
+        border-radius: 9999px; font-size: 0.875rem; transition: all 0.2s; text-decoration: none;
+      }
+      .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+      .btn-secondary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        border: 1px solid var(--outline); color: var(--on-navy);
+        padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem;
+        transition: all 0.2s; text-decoration: none; background: var(--surface-variant);
+      }
+      .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+      [style*="opacity:0"] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-['Inter']">
+
+    <main class="relative bg-navy-900 overflow-hidden">
+
+      <!-- Background -->
+      <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900"></div>
+        <div class="absolute inset-0 opacity-40" style="background:radial-gradient(ellipse 60% 40% at 30% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 50%), radial-gradient(ellipse 50% 30% at 70% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)"></div>
+        <div class="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-25" style="transform:translateX(30%) translateY(10%)">
+          <div class="w-full h-full rounded-full" style="background:linear-gradient(to bottom right,rgba(212,175,55,0.5),rgba(16,185,129,0.3))"></div>
+        </div>
+      </div>
+
+      <!-- ======== HERO ======== -->
+      <section class="relative pt-28 lg:pt-32 pb-12">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="mb-8">
+            <a class="inline-flex items-center gap-2 text-on-navy/40 hover:text-on-navy transition-colors text-sm" href="./services.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                <path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path>
+              </svg>
+              <span data-i18n="allServices">Все услуги</span>
+            </a>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-gold">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                    <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                  </svg>
+                  <span data-i18n="heroBadge">Флагманский проект</span>
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1" style="background:rgba(16, 185, 129, 0.2);color:#34d399;">
+                  <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#34d399;"></span>
+                  <span data-i18n="heroStatus">Активное строительство</span>
+                </span>
+              </div>
+
+              <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-on-navy leading-tight mb-4">
+                <span data-i18n="heroTitlePrefix">Central Asia</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="heroTitleAccent">Smart City</span>
+              </h1>
+              <p class="text-lg text-on-navy/50 mb-4 leading-relaxed">
+                <span data-i18n="heroDesc">Крупнейший и самый современный проект умного города в Узбекистане, строящийся в Охангаронском районе. Городская инфраструктура мирового класса на 6,400 гектарах.</span>
+              </p>
+              <div class="flex items-center gap-2 text-on-navy/60 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span data-i18n="heroLocation">Охангаронский район, Ташкентская область</span>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a class="btn-primary" href="./contacts.html">
+                  <span data-i18n="heroPrimaryBtn">Инвестировать</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                    <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+                <a class="btn-secondary" href="https://youtu.be/pwGThTieavI?si=s5t0WqOlSK6O6yT7" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+                  </svg>
+                  <span data-i18n="watchVideo">Смотреть видео</span>
+                </a>
+                <a class="btn-secondary" href="#zones">
+                  <span data-i18n="heroSecondaryBtn">Зоны</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-gold-500/10 to-transparent border border-gold-500/20">
+                <p class="font-mono text-3xl font-bold text-gold-400" data-i18n="stat1Num">6,400</p>
+                <p class="text-on-navy font-medium" data-i18n="stat1Label">Гектаров</p>
+                <p class="text-on-navy/40 text-sm" data-i18n="stat1Sub">Общая площадь</p>
+              </div>
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-gold-500/10 to-transparent border border-gold-500/20">
+                <p class="font-mono text-3xl font-bold text-gold-400" data-i18n="stat2Num">$20B</p>
+                <p class="text-on-navy font-medium" data-i18n="stat2Label">Инвестиции</p>
+                <p class="text-on-navy/40 text-sm" data-i18n="stat2Sub">Объём проекта</p>
+              </div>
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-gold-500/10 to-transparent border border-gold-500/20">
+                <p class="font-mono text-3xl font-bold text-gold-400" data-i18n="stat3Num">50K+</p>
+                <p class="text-on-navy font-medium" data-i18n="stat3Label">Рабочих мест</p>
+                <p class="text-on-navy/40 text-sm" data-i18n="stat3Sub">Будет создано</p>
+              </div>
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-gold-500/10 to-transparent border border-gold-500/20">
+                <p class="font-mono text-3xl font-bold text-gold-400" data-i18n="stat4Num">2030</p>
+                <p class="text-on-navy font-medium" data-i18n="stat4Label">Год</p>
+                <p class="text-on-navy/40 text-sm" data-i18n="stat4Sub">Завершение</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== ZONES ======== -->
+      <section id="zones" class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <span class="text-gold-400 font-mono text-xs tracking-widest uppercase mb-3 block" data-i18n="zonesTagline">Мастер-план</span>
+            <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy mb-4">
+              <span data-i18n="zonesTitlePrefix">Городские</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="zonesTitleAccent">зоны</span>
+            </h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Zone 1 -->
+            <div class="p-5 rounded-2xl border text-center bg-gradient-to-br from-gold-500/10 to-transparent border-gold-500/20">
+              <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-gold-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-gold-400" aria-hidden="true">
+                  <path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-1" data-i18n="zone1Title">Промышленная зона</h3>
+              <p class="font-mono text-2xl font-bold mb-2 text-gold-400" data-i18n="zone1Area">2,500 ga</p>
+              <p class="text-on-navy/50 text-sm" data-i18n="zone1Desc">Современные производственные комплексы</p>
+            </div>
+            <!-- Zone 2 -->
+            <div class="p-5 rounded-2xl border text-center bg-gradient-to-br from-blue-500/10 to-transparent border-blue-500/20">
+              <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-blue-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-blue-400" aria-hidden="true">
+                  <path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                  <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-1" data-i18n="zone2Title">Коммерческая зона</h3>
+              <p class="font-mono text-2xl font-bold mb-2 text-blue-400" data-i18n="zone2Area">1,200 ga</p>
+              <p class="text-on-navy/50 text-sm" data-i18n="zone2Desc">Бизнес-центры и офисы</p>
+            </div>
+            <!-- Zone 3 -->
+            <div class="p-5 rounded-2xl border text-center bg-gradient-to-br from-emerald-500/10 to-transparent border-emerald-500/20">
+              <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-emerald-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-emerald-400" aria-hidden="true">
+                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-1" data-i18n="zone3Title">Жилая зона</h3>
+              <p class="font-mono text-2xl font-bold mb-2 text-emerald-400" data-i18n="zone3Area">1,800 ga</p>
+              <p class="text-on-navy/50 text-sm" data-i18n="zone3Desc">Современные дома и квартиры</p>
+            </div>
+            <!-- Zone 4 -->
+            <div class="p-5 rounded-2xl border text-center bg-gradient-to-br from-green-500/10 to-transparent border-green-500/20">
+              <div class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-green-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-green-400" aria-hidden="true">
+                  <path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"></path><path d="M12 22v-3"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy text-lg mb-1" data-i18n="zone4Title">Зелёные зоны</h3>
+              <p class="font-mono text-2xl font-bold mb-2 text-green-400" data-i18n="zone4Area">900 ga</p>
+              <p class="text-on-navy/50 text-sm" data-i18n="zone4Desc">Сады, парки и зоны отдыха</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== INFRASTRUCTURE ======== -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 text-gold-400 text-sm font-medium mb-4" data-i18n="infraBadge">Smart Infrastructure</span>
+            <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy mb-4">
+              <span data-i18n="infraTitlePrefix">Современная</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="infraTitleAccent">инфраструктура</span>
+            </h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Col 1 -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5">
+              <div class="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-3" data-i18n="infra1Title">Транспорт</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra1i1">Современные дороги</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra1i2">Связь с метро</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra1i3">Электробусы</span></li>
+              </ul>
+            </div>
+            <!-- Col 2 -->
+             <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5">
+              <div class="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-3" data-i18n="infra2Title">Энергетика</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra2i1">Солнечные панели</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra2i2">Умная сеть</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra2i3">Зелёная энергия</span></li>
+              </ul>
+            </div>
+            <!-- Col 3 -->
+             <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5">
+              <div class="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M12 20h.01"></path><path d="M2 8.82a15 15 0 0 1 20 0"></path><path d="M5 12.859a10 10 0 0 1 14 0"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-3" data-i18n="infra3Title">Цифровая</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra3i1">Покрытие 5G</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra3i2">IoT инфраструктура</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra3i3">Умное управление</span></li>
+              </ul>
+            </div>
+            <!-- Col 4 -->
+             <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5">
+              <div class="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                   <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path>
+                   <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-3" data-i18n="infra4Title">Коммуникации</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra4i1">Очистка воды</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra4i2">Переработка отходов</span></li>
+                <li class="flex items-center gap-2 text-on-navy/60 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" class="flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span data-i18n="infra4i3">Эко-системы</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <!-- ======== TIMELINE ======== -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+           <div class="p-6 lg:p-8 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5">
+            <h3 class="font-heading text-xl font-semibold text-on-navy mb-8 text-center" data-i18n="timelineTitle">График проекта</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="text-center">
+                <span class="font-mono text-3xl font-bold text-gold-400">2024</span>
+                <h4 class="font-semibold text-on-navy mt-2 mb-1" data-i18n="t1Title">Старт проекта</h4>
+                <p class="text-on-navy/50 text-sm" data-i18n="t1Desc">Начало строительства инфраструктуры</p>
+              </div>
+              <div class="text-center">
+                <span class="font-mono text-3xl font-bold text-gold-400">2025</span>
+                <h4 class="font-semibold text-on-navy mt-2 mb-1" data-i18n="t2Title">Первый этап</h4>
+                <p class="text-on-navy/50 text-sm" data-i18n="t2Desc">Запуск промышленной зоны</p>
+              </div>
+              <div class="text-center">
+                <span class="font-mono text-3xl font-bold text-gold-400">2027</span>
+                <h4 class="font-semibold text-on-navy mt-2 mb-1" data-i18n="t3Title">Второй этап</h4>
+                <p class="text-on-navy/50 text-sm" data-i18n="t3Desc">Коммерческая и жилая зоны</p>
+              </div>
+              <div class="text-center">
+                <span class="font-mono text-3xl font-bold text-gold-400">2030</span>
+                <h4 class="font-semibold text-on-navy mt-2 mb-1" data-i18n="t4Title">Завершение</h4>
+                <p class="text-on-navy/50 text-sm" data-i18n="t4Desc">Полный запуск проекта</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== CTA ======== -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy mb-4">
+            <span data-i18n="ctaTitlePrefix">Займите своё место в</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="ctaTitleAccent">городе будущего</span>
+          </h2>
+          <p class="text-on-navy/50 mb-8" data-i18n="ctaDesc">Инвестируйте в проект Central Asia Smart City и участвуйте в строительстве самого передового города региона.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a class="btn-primary" href="./contacts.html">
+              <span data-i18n="ctaButton">Инвестировать</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                <path d="M7 7h10v10"></path><path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-surface-dim w-full py-12 px-6 md:px-12 border-t border-outline-variant/10">
+      <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto space-y-8 md:space-y-0">
+        <div class="text-left">
+          <div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+          <div class="text-on-surface-variant text-sm max-w-xs" data-i18n="copyright">© 2026 Economic Assembly of Uzbekistan.</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./index.html" data-i18n="navHome">Главная</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./about.html" data-i18n="navAbout">О нас</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./services.html" data-i18n="navServices">Услуги</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./contacts.html" data-i18n="navContacts">Контакты</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./i18n.js"></script>
+    <script src="./shared-nav.js?v=4"></script>
+  </body>
+</html>

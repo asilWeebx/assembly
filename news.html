@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">Новости | Economic Assembly</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "var(--background)",
+              "on-background": "var(--on-background)",
+              surface: "var(--surface)",
+              "on-surface": "var(--on-surface)",
+              "surface-variant": "var(--surface-variant)",
+              "on-surface-variant": "var(--on-surface-variant)",
+              primary: "var(--primary)",
+              "on-primary": "var(--on-primary)",
+              "primary-container": "var(--primary-container)",
+              "on-primary-container": "var(--on-primary-container)",
+              secondary: "var(--secondary)",
+              tertiary: "var(--tertiary)",
+              outline: "var(--outline)",
+              "outline-variant": "var(--outline-variant)",
+            },
+            fontFamily: {
+              headline: ["Manrope", "sans-serif"],
+              body: ["Inter", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .news-card-gradient {
+        background: linear-gradient(180deg, rgba(var(--primary-rgb), 0) 0%, rgba(var(--primary-rgb), 0.1) 100%);
+      }
+      .line-clamp-custom {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-clamp: 3;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-body overflow-x-hidden">
+    <main class="max-w-screen-xl mx-auto px-6 md:px-12 pt-32 pb-20">
+      <div class="relative z-10 max-w-4xl mb-16">
+        <p class="font-headline uppercase tracking-[0.3em] text-[10px] text-primary font-bold mb-6" data-i18n="heroOverline">Пресс-центр Ассамблеи</p>
+        <h1 class="font-headline text-5xl md:text-8xl font-black leading-[0.95] tracking-tighter mb-8" data-i18n="heroTitle">
+          Экономика в <br/>
+          <span class="text-gradient">Движении</span>
+        </h1>
+        <p class="font-body text-lg text-on-surface-variant max-w-xl leading-relaxed" data-i18n="heroText">
+          Главные события, аналитические обзоры и стратегические решения, формирующие бизнес-ландшафт Узбекистана.
+        </p>
+      </div>
+
+      <div id="publicNewsList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <!-- News items will be injected here -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyNews" class="hidden flex flex-col items-center justify-center py-20 text-center">
+        <div class="w-20 h-20 rounded-full bg-surface-variant flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-4xl text-outline">newspaper</span>
+        </div>
+        <p class="text-xl text-on-surface-variant font-medium" data-i18n="noNews">Пока новостей нет.</p>
+      </div>
+    </main>
+
+    <!-- News Modal -->
+    <div id="newsModal" class="fixed inset-0 z-[100] hidden">
+      <div class="absolute inset-0 bg-background/60 backdrop-blur-md" id="modalOverlay"></div>
+      <div class="absolute inset-x-4 md:inset-x-0 top-[10%] md:top-[15%] mx-auto max-w-2xl bg-surface border border-outline-variant/20 rounded-[2rem] shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+        <div class="relative h-64 md:h-80 overflow-hidden" id="modalImageContainer">
+          <img src="" alt="" class="w-full h-full object-cover" id="modalImage" />
+          <button id="closeModal" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-on-navy flex items-center justify-center backdrop-blur-md hover:bg-black/70 transition-all">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="p-8 md:p-10">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest" id="modalDate"></span>
+          </div>
+          <h2 class="font-headline text-2xl md:text-3xl font-black mb-6 text-on-surface" id="modalTitle"></h2>
+          <div class="prose prose-invert max-w-none">
+            <p class="text-on-surface-variant leading-relaxed whitespace-pre-wrap" id="modalBody"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./i18n.js"></script>
+    <script src="./shared-nav.js?v=4"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const news = JSON.parse(localStorage.getItem("ea_news") || "[]");
+        const root = document.getElementById("publicNewsList");
+        const empty = document.getElementById("emptyNews");
+        
+        if (!news.length) {
+          empty.classList.remove("hidden");
+        } else {
+          root.innerHTML = news
+            .map(
+              (item, index) => `
+                <article class="glass-card flex flex-col rounded-[2.5rem] overflow-hidden group hover:translate-y-[-8px] transition-all duration-500 cursor-pointer" onclick="openNewsModal(${index})">
+                  <div class="relative h-64 overflow-hidden shrink-0">
+                    ${item.image ? `
+                      <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    ` : `
+                      <div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-4xl text-primary/40">image</span>
+                      </div>
+                    `}
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-6 left-6">
+                       <span class="px-2 py-1 rounded-lg bg-background/40 backdrop-blur-md text-on-surface text-[10px] font-bold tracking-widest border border-white/5">
+                        ${item.date || ""}
+                       </span>
+                    </div>
+                  </div>
+                  <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="font-headline text-2xl font-black mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
+                      ${item.title}
+                    </h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-custom flex-grow">
+                      ${item.content}
+                    </p>
+                    <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mt-auto group-hover:gap-4 transition-all duration-300">
+                      <span data-i18n="readMore">Подробнее</span>
+                      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </div>
+                  </div>
+                </article>`
+            )
+            .join("");
+            
+           // Apply translations again after content injection
+           if (window.applyTranslations) window.applyTranslations(localStorage.getItem("ea_lang") || "ru");
+        }
+
+        const modal = document.getElementById("newsModal");
+        const modalContent = document.getElementById("modalContent");
+        
+        window.openNewsModal = (idx) => {
+          const item = news[idx];
+          if (!item) return;
+          
+          document.getElementById("modalTitle").textContent = item.title;
+          document.getElementById("modalBody").textContent = item.content;
+          document.getElementById("modalDate").textContent = item.date || "";
+          
+          const mImg = document.getElementById("modalImage");
+          const mImgContainer = document.getElementById("modalImageContainer");
+          if (item.image) {
+            mImg.src = item.image;
+            mImgContainer.classList.remove("hidden");
+          } else {
+            mImgContainer.classList.add("hidden");
+          }
+          
+          modal.classList.remove("hidden");
+          setTimeout(() => {
+            modalContent.classList.remove("scale-95", "opacity-0");
+            modalContent.classList.add("scale-100", "opacity-100");
+          }, 10);
+          document.body.style.overflow = "hidden";
+        };
+        
+        const closeMod = () => {
+          modalContent.classList.add("scale-95", "opacity-0");
+          modalContent.classList.remove("scale-100", "opacity-100");
+          setTimeout(() => {
+            modal.classList.add("hidden");
+          }, 300);
+          document.body.style.overflow = "";
+        };
+        
+        document.getElementById("closeModal").onclick = closeMod;
+        document.getElementById("modalOverlay").onclick = closeMod;
+      });
+    </script>
+    <script src="./i18n.js"></script>
+    <script src="./shared-nav.js?v=4"></script>
+  </body>
+</html>
+

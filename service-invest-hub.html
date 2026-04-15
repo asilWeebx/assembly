@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">Invest Hub | Экономическая Ассамблея</title>
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .text-gradient-gold {
+        background: linear-gradient(to right, #e2c365, #f5df96);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .badge-gold {
+        display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px;
+        background-color: rgba(212,175,55,0.1); padding: 0.25rem 0.75rem;
+        font-size: 0.75rem; font-weight: 500; color: #e2c365; border: 1px solid rgba(212,175,55,0.2);
+      }
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: linear-gradient(to right, #d4af37, #e2c365);
+        color: var(--on-navy); font-weight: 600; padding: 0.625rem 1.25rem;
+        border-radius: 9999px; font-size: 0.875rem; transition: all 0.2s; text-decoration: none;
+      }
+      .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+      .btn-secondary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        border: 1px solid var(--outline); color: var(--on-navy);
+        padding: 0.625rem 1.25rem; border-radius: 9999px; font-size: 0.875rem;
+        transition: all 0.2s; text-decoration: none; background: var(--surface-variant);
+      }
+      .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+      [style*="opacity:0"] { opacity: 1 !important; transform: none !important; }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-['Inter']">
+
+    <main class="relative bg-navy-900 overflow-hidden">
+
+      <!-- Background -->
+      <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900"></div>
+        <div class="absolute inset-0 opacity-40" style="background:radial-gradient(ellipse 60% 40% at 30% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%), radial-gradient(ellipse 50% 30% at 70% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%)"></div>
+        <div class="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-20" style="transform:translateX(10%) translateY(20%)">
+          <div class="w-full h-full rounded-full" style="background:linear-gradient(to bottom right,rgba(212,175,55,0.4),rgba(245,223,150,0.2))"></div>
+        </div>
+      </div>
+
+      <!-- ======== HERO ======== -->
+      <section class="relative pt-28 lg:pt-32 pb-12">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="mb-8">
+            <a class="inline-flex items-center gap-2 text-on-navy/40 hover:text-on-navy transition-colors text-sm" href="./services.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                <path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path>
+              </svg>
+              <span data-i18n="allServices">Все услуги</span>
+            </a>
+          </div>
+
+          <div class="max-w-3xl">
+            <span class="badge-gold mb-4" data-i18n="heroBadge">Invest Hub</span>
+            <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-on-navy leading-tight mb-4">
+              <span data-i18n="heroTitlePrefix">Инвестиционная</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="heroTitleAccent">платформа</span>
+            </h1>
+            <p class="text-lg text-on-navy/50 mb-8 leading-relaxed">
+              <span data-i18n="heroDesc">Единое окно для инвесторов и предпринимателей. Мы объединяем перспективные проекты с глобальным капиталом, обеспечивая безопасность и профессиональное сопровождение.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a class="btn-primary" href="./contacts.html">
+                <span data-i18n="heroPrimaryBtn">Инвестировать</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                  <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+                <a class="btn-secondary" href="https://youtu.be/pwGThTieavI?si=s5t0WqOlSK6O6yT7" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+                  </svg>
+                  <span data-i18n="watchVideo">Смотреть видео</span>
+                </a>
+              <a class="btn-secondary" href="#smart-city">
+                <span data-i18n="heroSecondaryBtn">Smart City</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== SERVICES ======== -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Card 1 -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-gold-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-colors" style="background:rgba(212,175,55,0.1)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card1Title">База проектов</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card1Desc">Доступ к базе проверенных высокодоходных проектов</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-gold-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-colors" style="background:rgba(212,175,55,0.1)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"></path><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"></path>
+                  <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"></path><circle cx="12" cy="12" r="10"></circle>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card2Title">Глобальные инвесторы</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card2Desc">Прямое общение с инвесторами мирового уровня</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-gold-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-colors" style="background:rgba(212,175,55,0.1)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
+                  <path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="m9 15 2 2 4-4"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card3Title">Юридическая экспертиза</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card3Desc">Профессиональная проверка и финансовый анализ</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="p-5 rounded-2xl bg-on-navy/[0.02] border border-on-navy/5 hover:border-gold-500/20 transition-all group">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-colors" style="background:rgba(212,175,55,0.1)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold-400" aria-hidden="true">
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-on-navy mb-2" data-i18n="card4Title">Защита инвестиций</h3>
+              <p class="text-on-navy/50 text-sm" data-i18n="card4Desc">Система правовой защиты и гарантий</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== FLAGSHIP ======== -->
+      <section id="smart-city" class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(212,175,55,0.02),transparent)"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="p-8 lg:p-12 rounded-3xl bg-on-navy/[0.02] border border-on-navy/5 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-gold-400/5 blur-[80px] -mr-32 -mt-32"></div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium mb-4" style="background:rgba(212,175,55,0.1);color:#e2c365;">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg>
+                  <span data-i18n="flagshipBadge">Флагманский проект</span>
+                </span>
+                <h2 class="font-heading text-2xl lg:text-4xl font-semibold text-on-navy mb-4">
+                  <span data-i18n="flagshipTitlePrefix">Central Asia</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="flagshipTitleAccent">Smart City</span>
+                </h2>
+                <p class="text-on-navy/50 mb-8 leading-relaxed" data-i18n="flagshipDesc">
+                  Крупнейший и самый современный проект умного города в Узбекистане, строящийся в Охангаронском районе. Городская инфраструктура мирового класса на 6,400 гектарах.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <p class="text-gold-400 font-mono text-2xl font-bold">6,400</p>
+                    <p class="text-on-navy/40 text-sm" data-i18n="flagshipStat1">Гектаров</p>
+                  </div>
+                  <div>
+                    <p class="text-gold-400 font-mono text-2xl font-bold">$20B</p>
+                    <p class="text-on-navy/40 text-sm" data-i18n="flagshipStat2">Инвестиции</p>
+                  </div>
+                </div>
+                <a class="btn-primary" href="./service-smart-city.html">
+                  <span data-i18n="flagshipButton">Подробнее о проекте</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                    <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="relative order-first lg:order-last">
+                 <div class="aspect-video rounded-2xl bg-white/[0.03] border border-on-navy/10 flex items-center justify-center">
+                    <!-- Placeholder UI for Smart City Visual -->
+                    <div class="text-center p-8">
+                      <div class="w-16 h-16 rounded-full bg-gold-400/20 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e2c365" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      </div>
+                      <p class="text-on-navy font-medium text-lg mb-1">Smart City Visualization</p>
+                      <p class="text-on-navy/40 text-sm">Ohangaron District, Tashkent Region</p>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== CTA ======== -->
+      <section class="relative py-16">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-on-navy/10 to-transparent"></div>
+        <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <h2 class="font-heading text-2xl lg:text-3xl font-semibold text-on-navy mb-4">
+            <span data-i18n="ctaTitlePrefix">Готовы инвестировать в</span><!-- --> <span class="text-gradient-gold font-display" data-i18n="ctaTitleAccent">будущее?</span>
+          </h2>
+          <p class="text-on-navy/50 mb-8" data-i18n="ctaDesc">Получите каталог проектов, консультацию экспертов и персональную дорожную карту по входу в Invest Hub.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a class="btn-primary" href="./contacts.html">
+              <span data-i18n="ctaButton">Связаться</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true">
+                <path d="M7 7h10v10"></path><path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-surface-dim w-full py-12 px-6 md:px-12 border-t border-outline-variant/10">
+      <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto space-y-8 md:space-y-0">
+        <div class="text-left">
+          <div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+          <div class="text-on-surface-variant text-sm max-w-xs" data-i18n="copyright">© 2026 Economic Assembly of Uzbekistan.</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./index.html" data-i18n="navHome">Главная</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./about.html" data-i18n="navAbout">О нас</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./services.html" data-i18n="navServices">Услуги</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="./contacts.html" data-i18n="navContacts">Контакты</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./i18n.js"></script>
+    <script src="./shared-nav.js?v=4"></script>
+  </body>
+</html>

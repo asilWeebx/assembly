@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Услуги | Экономическая Ассамблея Узбекистана</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        "on-background": "var(--on-background)",
+        surface: "var(--surface)",
+        "on-surface": "var(--on-surface)",
+        "surface-variant": "var(--surface-variant)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        primary: "var(--primary)",
+        "on-primary": "var(--on-primary)",
+        "primary-container": "var(--primary-container)",
+        "on-primary-container": "var(--on-primary-container)",
+        secondary: "var(--secondary)",
+        tertiary: "var(--tertiary)",
+        outline: "var(--outline)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      fontFamily: {
+        headline: ["Manrope", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"]
+      }
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation is handled by shared-nav.js -->
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-4xl mb-20">
+<p class="font-label text-[10px] uppercase tracking-widest text-primary mb-4" data-i18n="heroOverline">Наши возможности</p>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-6" data-i18n="heroTitle">
+                    Экосистема <br/><span class="text-primary">развития</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl" data-i18n="heroText">
+                    Стратегические инструменты для масштабирования бизнеса, привлечения инвестиций и цифровой трансформации экономики Узбекистана.
+                </p>
+<div class="mt-10 flex flex-wrap gap-4">
+<a href="./contacts.html" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:shadow-lg transition-all inline-block" data-i18n="beResident">Стать резидентом</a>
+<a href="#servicesGrid" class="bg-surface-container-high text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-surface-container-highest transition-all inline-block" data-i18n="learnMore">Узнать больше</a>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section>
+<div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Bizness darja -->
+<div class="md:col-span-2 glass-card p-10 rounded-[2rem] hover:bg-surface-container-highest/60 transition-all duration-500 group">
+<div class="flex justify-between items-start mb-8">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="business_center">business_center</span>
+</div>
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest" data-i18n="premiumLevel">Premium Level</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4" data-i18n="biznessDarjaTitle">Bizness DARCHA</h3>
+<p class="text-on-surface-variant font-light mb-6" data-i18n="biznessDarjaDesc">Эксклюзивная программа сертификации и повышения статуса предприятий до международного уровня. Аудит, консалтинг и внедрение лучших мировых практик управления.</p>
+<a class="flex items-center text-primary font-semibold text-sm hover:translate-x-2 transition-transform cursor-pointer" href="./service-bizness-darja.html">
+                        <span data-i18n="more">Подробнее</span> <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Invest Hub -->
+<div class="md:col-span-2 glass-card p-10 rounded-[2rem] overflow-hidden relative group">
+<div class="relative z-10">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-8 group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-icon="hub">hub</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-4" data-i18n="investHubTitle">Invest Hub</h3>
+<p class="text-on-surface-variant font-light mb-6" data-i18n="investHubDesc">Единая точка входа для иностранных и локальных инвесторов. Прямой доступ к государственным проектам, ГЧП и льготному финансированию.</p>
+<a class="flex items-center text-secondary font-semibold text-sm cursor-pointer" href="./service-invest-hub.html">
+                            <span data-i18n="viewProjects">Посмотреть проекты</span> <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-colors"></div>
+</div>
+<!-- Edu-Jo -->
+<div class="glass-card p-8 rounded-[2rem] group hover:translate-y-[-8px] transition-transform">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3"><a href="./service-edu-jo.html">Edu-Jo</a></h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="eduJoDesc">Образовательная платформа для топ-менеджмента и государственных служащих. Современные навыки экономики.</p>
+</div>
+<!-- Reportaj GO -->
+<div class="glass-card p-8 rounded-[2rem] group hover:translate-y-[-8px] transition-transform">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3"><a href="./service-reportaj-go.html">Reportaj GO</a></h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="reportajGoDesc">Система прозрачной отчетности и мониторинга экономических показателей регионов в реальном времени.</p>
+</div>
+<!-- GR & FR (Stacked) -->
+<div class="md:col-span-2 grid grid-cols-2 gap-6">
+<div class="glass-card p-8 rounded-[2rem] group hover:bg-primary/5 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-primary-container/40 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-2"><a href="./service-gr.html">GR</a></h3>
+<p class="text-xs text-on-surface-variant" data-i18n="grDesc">Взаимодействие с государственными структурами и защита интересов бизнеса.</p>
+</div>
+<div class="glass-card p-8 rounded-[2rem] group hover:bg-secondary/5 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/40 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="text-lg font-bold font-headline mb-2"><a href="./service-fr.html">FR</a></h3>
+<p class="text-xs text-on-surface-variant" data-i18n="frDesc">Финансовое сопровождение, лизинг и грантовая поддержка инноваций.</p>
+</div>
+</div>
+<!-- BR -->
+<div class="glass-card p-8 rounded-[2rem] group hover:translate-y-[-8px] transition-transform">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3"><a href="./service-br.html">BR</a></h3>
+<p class="text-sm text-on-surface-variant leading-relaxed" data-i18n="brDesc">Business Relations: международные бизнес-миссии и поиск зарубежных партнеров для экспорта.</p>
+</div>
+<!-- Networking -->
+<div class="md:col-span-2 glass-card p-8 flex flex-col md:flex-row gap-8 items-center group">
+<div class="w-full md:w-1/2 rounded-2xl overflow-hidden h-40 bg-gold-400/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-gold-400 text-6xl group-hover:scale-110 transition-transform">group</span>
+</div>
+<div class="w-full md:w-1/2">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">groups</span>
+<h3 class="text-2xl font-bold font-headline" data-i18n="networkingTitle">Networking</h3>
+</div>
+<p class="text-on-surface-variant text-sm font-light mb-6" data-i18n="networkingDesc">Эксклюзивный доступ к клубу Mashvarat. Прямые связи с топ-менеджментом и лидерами мнений Узбекистана.</p>
+<a class="text-sm font-bold text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all cursor-pointer" href="./service-networking.html">
+                        <span data-i18n="learnMoreShort">Подробнее</span>
+</a>
+</div>
+</div>
+<!-- Smart City -->
+<div class="md:col-span-2 glass-card p-8 flex flex-col md:flex-row gap-8 items-center group">
+<div class="w-full md:w-1/2 rounded-2xl overflow-hidden h-40">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="smart city management system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf-N0X2y6hUm49agqGNnarNMNCvUKTcW1m29trA8rwAwaIAwNfB74ZIbJOWzbXOcT9nLKeeDcSkWjPiptnJqLR0eALBfKE5YGOftWxfVXWAIea-lno_lF7Nc6YTltnM77infgLWhEtP4uJtnDQQaAz1nLY4IqGpiJcx9LiNUhhYodPK_RIPfYfmNoMhSe-xQkPBLUD7bHnyDI0VwMU8XUl4JcyRmPhsjdGear5dtwK81Pa6M7mrjnT20ZSjLA_hDQG1aCbYjDKgQQ"/>
+</div>
+<div class="w-full md:w-1/2">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">domain</span>
+<h3 class="text-2xl font-bold font-headline" data-i18n="smartCityTitle">Smart City</h3>
+</div>
+<p class="text-on-surface-variant text-sm font-light mb-6" data-i18n="smartCityDescShort">Инновационные решения для городской инфраструктуры и управления ресурсами.</p>
+<a class="text-sm font-bold text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all cursor-pointer" href="./service-smart-city.html">
+                        <span data-i18n="learnMoreShort">Подробнее</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic CTA -->
+<section class="mt-24">
+<div class="bg-surface-container-low rounded-[3rem] p-12 text-center border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-primary/5 blur-[120px]"></div>
+<h2 class="text-4xl font-headline font-bold mb-6 relative z-10" data-i18n="readyToScale">Готовы масштабировать свой бизнес?</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto mb-10 relative z-10" data-i18n="readyToScaleDesc">Наши эксперты помогут подобрать оптимальный пакет услуг под ваши стратегические цели и задачи.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold hover:scale-105 transition-all text-lg" data-i18n="bookConsultation">Записаться на консультацию</button>
+<button class="bg-transparent border border-outline text-on-surface px-10 py-5 rounded-full font-bold hover:bg-surface-variant transition-all text-lg" data-i18n="downloadPresentation">Скачать презентацию</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim w-full py-12 px-12 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto space-y-8 md:space-y-0">
+<div class="text-left">
+<div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+<div class="text-on-surface-variant text-sm max-w-xs" data-i18n="copyright">
+                    © 2026 Economic Assembly of Uzbekistan.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-8 text-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="privacyPolicy">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="termsOfService">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="investmentPortal">Investment Portal</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="sitemap">Sitemap</a>
+</div>
+</div>
+</footer>
+<script src="./i18n.js"></script>
+  <script src="./shared-nav.js?v=4"></script>
+</body></html>

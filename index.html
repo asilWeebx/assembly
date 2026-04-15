@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- Updated: 2026-04-11T19:26:00 (Invest Hub Fixed) -->
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Economic Assembly</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "var(--background)",
+              "on-background": "var(--on-background)",
+              surface: "var(--surface)",
+              "on-surface": "var(--on-surface)",
+              "surface-variant": "var(--surface-variant)",
+              "on-surface-variant": "var(--on-surface-variant)",
+              primary: "var(--primary)",
+              "on-primary": "var(--on-primary)",
+              "primary-container": "var(--primary-container)",
+              "on-primary-container": "var(--on-primary-container)",
+              secondary: "var(--secondary)",
+              tertiary: "var(--tertiary)",
+              outline: "var(--outline)",
+              "outline-variant": "var(--outline-variant)",
+            },
+            fontFamily: {
+              headline: ["Manrope", "sans-serif"],
+              body: ["Inter", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=2" />
+  </head>
+  <body id="pageBody" class="bg-background text-on-background font-body">
+    <!-- Header is handled by shared-nav.js -->
+
+    <main class="pt-28">
+      <section class="px-6 md:px-12">
+        <div class="hero-card relative overflow-hidden rounded-[2rem] h-[420px] md:h-[520px] flex items-end p-8 md:p-14">
+          <div class="max-w-3xl relative z-10">
+            <p class="uppercase tracking-[0.15em] text-xs text-primary mb-4" data-i18n="heroOverline">Экономика будущего</p>
+            <h1 class="font-headline text-4xl md:text-7xl font-extrabold leading-tight" data-i18n="heroTitle">
+              Экосистема развития Узбекистана
+            </h1>
+            <p class="mt-6 text-on-surface-variant text-lg" data-i18n="heroText">
+              Современная платформа взаимодействия бизнеса, инвесторов и государственных институтов.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="./contacts.html" class="px-8 py-3 rounded-xl bg-primary text-on-primary font-bold hover:shadow-lg transition-all inline-block" data-i18n="beResident">Стать резидентом</a>
+              <a href="https://youtu.be/pwGThTieavI?si=s5t0WqOlSK6O6yT7" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-xl bg-on-navy/10 text-on-navy font-bold hover:bg-on-navy/20 transition-all inline-block border border-on-navy/20" data-i18n="watchVideo">Смотреть видео</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="px-6 md:px-12 mt-20">
+        <div class="grid md:grid-cols-2 gap-6">
+          <article class="glass-card rounded-[1.7rem] p-8">
+            <h2 class="font-headline text-3xl font-bold mb-4" data-i18n="missionTitle">Миссия</h2>
+            <p class="text-on-surface-variant leading-relaxed" data-i18n="missionDesc">
+              Создавать устойчивую экономическую среду через цифровизацию, экспертизу и международные партнерства.
+            </p>
+          </article>
+          <article class="glass-card rounded-[1.7rem] p-8">
+            <h2 class="font-headline text-3xl font-bold mb-4" data-i18n="prioritiesTitle">Приоритеты</h2>
+            <ul class="space-y-3 text-on-surface-variant">
+              <li data-i18n="priority1">Инвестиционные проекты и PPP</li>
+              <li data-i18n="priority2">Поддержка экспорта и бизнеса</li>
+              <li data-i18n="priority3">Аналитика и региональная прозрачность</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="services" class="px-6 md:px-12 mt-20">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="font-headline text-3xl md:text-4xl font-extrabold" data-i18n="navServices">Сервисы</h2>
+        </div>
+        <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Invest Hub -->
+          <article class="glass-card rounded-[2rem] p-8 flex flex-col h-full group">
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-[0.2em] text-primary/60 font-bold mb-3">Invest</p>
+              <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Invest Hub</h3>
+              <p class="text-on-surface-variant leading-relaxed">Поиск и сопровождение инвестиционных проектов в Узбекистане.</p>
+            </div>
+            <div class="mt-8">
+              <a href="./service-edu-jo.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-variant text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-all duration-300 group/btn">
+                <span data-i18n="openPage">Открыть страницу</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Reportaj GO -->
+          <article class="glass-card rounded-[2rem] p-8 flex flex-col h-full group">
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-[0.2em] text-primary/60 font-bold mb-3">Media</p>
+              <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Reportaj GO</h3>
+              <p class="text-on-surface-variant leading-relaxed">Профессиональное видеопроизводство и медиа-продвижение бизнеса.</p>
+            </div>
+            <div class="mt-8">
+              <a href="./service-reportaj-go.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-variant text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-all duration-300 group/btn">
+                <span data-i18n="openPage">Открыть страницу</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Smart City -->
+          <article class="glass-card rounded-[2rem] p-8 flex flex-col h-full group">
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-[0.2em] text-primary/60 font-bold mb-3">GovTech</p>
+              <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Smart City</h3>
+              <p class="text-on-surface-variant leading-relaxed">Инновационные решения для городской инфраструктуры и управления.</p>
+            </div>
+            <div class="mt-8">
+              <a href="./service-smart-city.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-variant text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-all duration-300 group/btn">
+                <span data-i18n="openPage">Открыть страницу</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Edu & Job -->
+          <article class="glass-card rounded-[2rem] p-8 flex flex-col h-full group">
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-[0.2em] text-primary/60 font-bold mb-3">Education</p>
+              <h3 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Edu & Job</h3>
+              <p class="text-on-surface-variant leading-relaxed">Платформа для подготовки и трудоустройства квалифицированных кадров.</p>
+            </div>
+            <div class="mt-8">
+              <a href="./service-edu-jo.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-variant text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-all duration-300 group/btn">
+                <span data-i18n="openPage">Открыть страницу</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="news" class="px-6 md:px-12 mt-20 mb-20">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="font-headline text-3xl md:text-4xl font-extrabold" data-i18n="navNews">Новости</h2>
+        </div>
+        <div id="newsList" class="grid md:grid-cols-2 gap-6"></div>
+      </section>
+    </main>
+
+    <footer id="contacts" class="px-6 md:px-12 py-10 border-t border-[#93ccff]/10">
+      <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+        <div>
+          <div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+          <p class="text-on-surface-variant text-sm" data-i18n="address">info@assembly.uz | +998 71 000 00 00</p>
+        </div>
+        <p class="text-slate-500 text-sm" data-i18n="copyright">© 2026</p>
+      </div>
+    </footer>
+
+    <div id="requestModal" class="fixed inset-0 hidden items-center justify-center p-4 modal-bg">
+      <div class="glass-card rounded-2xl p-6 w-full max-w-md">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-headline text-2xl font-bold" data-i18n="modalTitle">Заявка</h3>
+          <button id="closeRequestModal" class="text-slate-300">✕</button>
+        </div>
+        <form id="requestForm" class="space-y-3">
+          <input name="name" required placeholder="Ваше имя" data-i18n="placeholderName" class="w-full rounded-xl bg-[#0f1a31] border-[#93ccff]/20 text-on-surface" />
+          <input name="phone" required placeholder="Телефон" data-i18n="placeholderPhone" class="w-full rounded-xl bg-[#0f1a31] border-[#93ccff]/20 text-on-surface" />
+          <textarea name="message" required placeholder="Комментарий" data-i18n="modalPlaceholderComment" class="w-full rounded-xl bg-[#0f1a31] border-[#93ccff]/20 text-on-surface"></textarea>
+          <button class="w-full rounded-xl py-2 bg-primary text-[#003351] font-semibold" data-i18n="sendBtn">Отправить</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./app.js?v=2"></script>
+    <script src="./i18n.js?v=2"></script>
+    <script src="./shared-nav.js?v=4"></script>
+</body>
+</html>

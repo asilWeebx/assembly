@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#0b1326",
+                    "on-primary-fixed-variant": "#004b73",
+                    "primary-container": "#004a72",
+                    "primary-fixed-dim": "#93ccff",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "tertiary-fixed-dim": "#ffb954",
+                    "on-primary": "#003351",
+                    "secondary-container": "#074e6e",
+                    "inverse-surface": "#dae2fd",
+                    "on-primary-container": "#66bbfe",
+                    "outline": "#8b9198",
+                    "error": "#ffb4ab",
+                    "background": "#0b1326",
+                    "surface-bright": "#31394d",
+                    "surface-container-high": "#222a3d",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#cce5ff",
+                    "tertiary-container": "#623e00",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#2d3449",
+                    "on-error": "#690005",
+                    "tertiary": "#ffb954",
+                    "surface-tint": "#93ccff",
+                    "outline-variant": "#41484d",
+                    "on-surface": "#dae2fd",
+                    "surface": "#0b1326",
+                    "inverse-on-surface": "#283044",
+                    "secondary-fixed": "#c7e7ff",
+                    "tertiary-fixed": "#ffddb4",
+                    "on-tertiary-fixed": "#291800",
+                    "on-secondary": "#00344c",
+                    "on-primary-fixed": "#001d31",
+                    "surface-container": "#171f33",
+                    "on-secondary-container": "#89bfe4",
+                    "secondary": "#97cdf3",
+                    "surface-container-low": "#131b2e",
+                    "inverse-primary": "#006397",
+                    "on-background": "#dae2fd",
+                    "secondary-fixed-dim": "#97cdf3",
+                    "on-secondary-fixed": "#001e2e",
+                    "surface-variant": "#2d3449",
+                    "primary": "#93ccff",
+                    "surface-container-lowest": "#060e20",
+                    "on-tertiary": "#452b00",
+                    "on-tertiary-container": "#eba63d",
+                    "on-surface-variant": "#c0c7ce",
+                    "on-secondary-fixed-variant": "#024c6c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(147, 204, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="bg-[#0b1326]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-xl shadow-black/20 flex justify-between items-center w-full px-12 py-4 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#93ccff] font-headline">Economic Assembly of Uzbekistan</div>
+<div class="hidden md:flex items-center space-gap-8 gap-8">
+<a class="font-manrope tracking-tight font-bold uppercase text-sm transition-colors duration-300 text-slate-300 hover:text-[#93ccff]" href="#">About Us</a>
+<div class="relative group">
+<button class="font-manrope tracking-tight font-bold uppercase text-sm transition-colors duration-300 text-slate-300 hover:text-[#93ccff] flex items-center gap-1">
+                    Services <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<!-- Mega Dropdown Simulated -->
+<div class="absolute top-full left-0 mt-2 w-64 glass-card rounded-xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+<div class="grid gap-2">
+<a class="text-slate-300 hover:text-primary text-sm p-2 rounded-lg hover:bg-surface-bright transition-all" href="#">Bizness darja</a>
+<a class="text-slate-300 hover:text-primary text-sm p-2 rounded-lg hover:bg-surface-bright transition-all" href="#">Invest Hub</a>
+<a class="text-slate-300 hover:text-primary text-sm p-2 rounded-lg hover:bg-surface-bright transition-all" href="#">Edu-Jo</a>
+<a class="text-slate-300 hover:text-primary text-sm p-2 rounded-lg hover:bg-surface-bright transition-all" href="#">Reportaj GO</a>
+<a class="text-slate-300 hover:text-primary text-sm p-2 rounded-lg hover:bg-surface-bright transition-all" href="#">GR / FR / BR</a>
+<a class="text-slate-300 hover:text-primary text-sm p-2 rounded-lg hover:bg-surface-bright transition-all" href="#">Smart City</a>
+</div>
+</div>
+</div>
+<a class="font-manrope tracking-tight font-bold uppercase text-sm transition-colors duration-300 text-slate-300 hover:text-[#93ccff]" href="#">Association</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-sm transition-colors duration-300 text-slate-300 hover:text-[#93ccff]" href="#">Projects</a>
+<a class="font-manrope tracking-tight font-bold uppercase text-sm transition-colors duration-300 text-slate-300 hover:text-[#93ccff]" href="#">Contacts</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#93ccff] font-manrope tracking-tight font-bold uppercase text-sm">EN</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-manrope tracking-tight font-bold uppercase text-sm px-6 py-2.5 rounded-full scale-95 duration-200 ease-in-out hover:scale-100">Contact Us</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center items-center px-6 overflow-hidden">
+<!-- Background Image Pattern -->
+<div class="absolute inset-0 z-0">
+<img alt="abstract digital network connection globe with glowing nodes and data lines on a deep dark blue cosmic background" class="w-full h-full object-cover opacity-30 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8IldzMA057mIBIhIDKkplNjwOYUY5s0_cvZlt2CmU7EQkc8FJXOMfJMyCXQH56hGSe4U4ZhgQ-NGe97teyHQ6LsQRqayM5ffFcdcIvkL4i4jynRM6DG0yqWd2NeK9cYDBZ-YH96R7xLaHUzZIdUk2f0niCL9vp8suXQUEcLkyEOW8WOvhanix8N4iBk799mHIqbt6Qg2PU5554kBI1AAuaUZeXdaKZ3NdOAYGlBESDl-U0GtWgGEj2u-rcEpAz5CwnPt3-AVZHhM"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 max-w-5xl text-center flex flex-col items-center">
+<span class="label-md text-primary tracking-[0.2em] font-medium mb-6 animate-pulse uppercase">Центр экономического развития</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tighter mb-8 text-glow">
+                    ЕДИНАЯ ЭКОСИСТЕМА<br/>для Предпринимателей
+                </h1>
+<p class="text-slate-400 text-lg md:text-xl max-w-3xl font-body leading-relaxed mb-12">
+                    Создаем условия для устойчивого роста бизнеса через инновации, GR-поддержку и международную интеграцию в ключевых секторах экономики Узбекистана.
+                </p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                        Посмотреть услуги
+                    </button>
+<button class="bg-surface-variant/20 backdrop-blur-md border border-outline-variant/30 text-white px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-variant/40 transition-all active:scale-95">
+                        Стать членом
+                    </button>
+<button class="flex items-center gap-3 text-white px-6 py-4 font-headline font-bold group">
+<div class="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+                        Watch Video
+                    </button>
+</div>
+</div>
+<!-- Key Stats Grid -->
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-24 max-w-[1400px] w-full px-4">
+<div class="glass-card p-8 rounded-2xl group hover:bg-surface-container-high transition-all">
+<div class="text-primary text-4xl font-headline font-black mb-2">46+</div>
+<div class="text-slate-400 font-label uppercase tracking-wider text-xs">Ассоциаций</div>
+<div class="mt-4 text-sm text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">Профессиональные сообщества</div>
+</div>
+<div class="glass-card p-8 rounded-2xl group hover:bg-surface-container-high transition-all">
+<div class="text-primary text-4xl font-headline font-black mb-2">8</div>
+<div class="text-slate-400 font-label uppercase tracking-wider text-xs">Направлений</div>
+<div class="mt-4 text-sm text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">Отраслевая специализация</div>
+</div>
+<div class="glass-card p-8 rounded-2xl group hover:bg-surface-container-high transition-all">
+<div class="text-primary text-4xl font-headline font-black mb-2">6 400 га</div>
+<div class="text-slate-400 font-label uppercase tracking-wider text-xs">Smart City</div>
+<div class="mt-4 text-sm text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">Технологическая зона</div>
+</div>
+<div class="glass-card p-8 rounded-2xl group hover:bg-surface-container-high transition-all">
+<div class="text-primary text-4xl font-headline font-black mb-2">3</div>
+<div class="text-slate-400 font-label uppercase tracking-wider text-xs">Международных офиса</div>
+<div class="mt-4 text-sm text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">Глобальная представленность</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Features Section -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto bg-surface-container-low">
+<div class="grid grid-cols-12 gap-12 items-center">
+<div class="col-span-12 lg:col-span-5">
+<h2 class="font-headline text-4xl font-bold text-white mb-8 leading-tight">Инновационные решения для <span class="text-tertiary">вашего успеха</span></h2>
+<p class="text-slate-400 text-lg mb-12 leading-relaxed">
+                        Мы объединяем лучшие ресурсы и международную экспертизу для реализации масштабных проектов и поддержки частной инициативы.
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+<div>
+<h4 class="text-white font-bold mb-1">Invest Hub</h4>
+<p class="text-slate-500 text-sm">Прямой доступ к инвестиционным пулам и фондам развития.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<div>
+<h4 class="text-white font-bold mb-1">Edu-Jo</h4>
+<p class="text-slate-500 text-sm">Образовательная платформа для лидеров нового поколения.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 grid grid-cols-2 gap-6">
+<div class="relative aspect-square rounded-3xl overflow-hidden glass-card p-2 transform -rotate-3">
+<img alt="modern corporate architectural building in Uzbekistan with glass reflections and sunset sky" class="w-full h-full object-cover rounded-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxGYTCgTpnDyaMhVK6dJBZzlMivvUcwm2m8Sx1_QOcDF91wVw2-yn5sjfCPzPXCkB4ZTq3QMB8-dQ5Id3P710s8kWs1BxJx2pXONwZY-f37VdSwqsoRXGe9ki1le_b-JHv0WHsbqhBqhlYWVV6XnC5jVAQRPiwraUDRXcNpCVq4uFpwmj881OrlBLNkqgqcfEWhVhQPcpa-WzThRPfwU17zdXb3IVXaQVLVwzsQDFXbu5CwPDEI3QS1ULSHXTkjJrrF7e9-fviKm8"/>
+</div>
+<div class="relative aspect-square rounded-3xl overflow-hidden glass-card p-2 transform translate-y-12 rotate-2">
+<img alt="diverse team of business professionals collaborating in a high-tech modern boardroom with digital screens" class="w-full h-full object-cover rounded-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TrUjCyu8vnm5r59R6uu7MweU-CSNUCaKoASuDGCpEvt8rikEum4pUmtOIjeArdzvZneQ1Abmv2yJEu2vm5oPn1yEa2JVzMq00rsFbFCxaIGk8hVeMJjC5XALBzF9vKY5shRPliJdXMC0hWax2LP5TNQAtYqOJ9qCEFcW9ApBUb-zR5j1akMj74kEz6RgdobrDhaWi-m9XSQuIP0ypqBxIPcRBCM2-603fELH4TWnrkKMnpKxpZQ068EA_x05YNQ6FoJIVU0Hlyk"/>
+</div>
+</div>
+</div>
+</section>
+<!-- News & Updates Section -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto overflow-hidden">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="label-md text-primary tracking-[0.2em] font-medium mb-4 block uppercase">Пресс-центр</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-white leading-tight">Новости и <span class="text-primary">Обновления</span></h2>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300" href="#">
+                    Все новости <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- News Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-2xl overflow-hidden mb-6 border border-white/5">
+<img alt="aerial view of futuristic city development in Uzbekistan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIEEEWfgW0AtsHw27qY8QKeHDgvVGkLvbDE1eeYIUBwb5Kf1ZK-93fwLpPZ6ERePNRVl49XtH206AxVVMI7kDJ6aoIEcIxHfbHxP4RAS9JfnhC4Ndt8XNLB8f0rG7gwEzrkpa0GizXJ-OJGs48IUa1voPcpX8WF-8sL4W3G228KJi5jkloU6Zxsa3GelhCl3ymV9QlQ1XlEp1RCu5ai7_FResXrhlhbo-gtznvCJYCT7WSj9YyNfhgA80tK1y9HPaXIiNDPdxgnZY"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-on-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-md">Инновации</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 text-xs font-medium mb-3">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">calendar_today</span> 12 Окт 2024</span>
+<span class="w-1 h-1 rounded-full bg-slate-700"></span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">schedule</span> 5 мин чтения</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white group-hover:text-primary transition-colors line-clamp-2 leading-snug">Запуск первого этапа Smart City: технологический прорыв в регионе</h3>
+</div>
+<!-- News Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-2xl overflow-hidden mb-6 border border-white/5">
+<img alt="business meeting with international partners" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM9z95-XqPvPj5S8B51A6xnkX7GNuMnBAQg2BgzSnUP9dIIgYy7SOStr7j3jJ2y00ys43xAvwHQazOYSMQzo-xxlyl4Oo2OznbrTrf9-SgDvxBkH7mvmQ_kyexnpl8IzrC7BRNLeUYz4EgzFtOjg7WRkzm8BVbwfr0Uk75BhNTuL1AoQp2DwsVQNY244ynmAJTvmwhfkKK3mDmZq2F7BdTV5AhKGcV8Yb9yT8TZgxId60t5RvgzwzL4LKqZWw4u_NrckTNwgXO9PI"/>
+<div class="absolute top-4 left-4 bg-tertiary/90 text-on-tertiary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-md">Экономика</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 text-xs font-medium mb-3">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">calendar_today</span> 08 Окт 2024</span>
+<span class="w-1 h-1 rounded-full bg-slate-700"></span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">schedule</span> 8 мин чтения</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white group-hover:text-primary transition-colors line-clamp-2 leading-snug">Новые инвестиционные льготы для членов Экономической Ассамблеи</h3>
+</div>
+<!-- News Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-2xl overflow-hidden mb-6 border border-white/5">
+<img alt="global digital connection map" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEvgxMXbuflKhKcnYf4BKPSmQJbOANkJVuhJ3ysi1fiLAa8Bxfq22UN6XMu4cvJsIfFV1lbDmpbC_pa4hK5pvJWsBgIqM9_3YZE8H56iCpP2neh8ogjKFJsGH9euBVoFtYtP1fLyxfP0NOgt98oB7VnIpxk2YXQE7oBB0ngt5az9UvSXPz_R0dkQgAceTa4QsBW0iroNKdVnEPMfy0MVoBudDWDSC6CzHOl1nPN-X5V7yiTvwiRV-oBjZLqnk1di5OtgVdRFQ4yyk"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-md">Международное</div>
+</div>
+<div class="flex items-center gap-4 text-slate-500 text-xs font-medium mb-3">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">calendar_today</span> 05 Окт 2024</span>
+<span class="w-1 h-1 rounded-full bg-slate-700"></span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">schedule</span> 4 мин чтения</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white group-hover:text-primary transition-colors line-clamp-2 leading-snug">Расширение партнерской сети: открытие офиса в Сингапуре</h3>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1326] full-width pt-20 pb-10 border-t border-white/5">
+<div class="grid grid-cols-4 gap-12 px-12 max-w-[1920px] mx-auto">
+<div class="col-span-4 lg:col-span-1">
+<div class="text-[#93ccff] font-manrope font-black text-2xl mb-8">Economic Assembly</div>
+<p class="font-inter text-slate-400 text-sm tracking-wide leading-relaxed">
+                    Главная платформа для консолидации бизнеса, инноваций и инвестиций в Республике Узбекистан.
+                </p>
+</div>
+<div class="col-span-2 lg:col-span-1">
+<h5 class="text-white font-bold mb-6">Assembly</h5>
+<ul class="space-y-4">
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">About Us</a></li>
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">Projects</a></li>
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="col-span-2 lg:col-span-1">
+<h5 class="text-white font-bold mb-6">Services</h5>
+<ul class="space-y-4">
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">Invest Hub</a></li>
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">Edu-Jo</a></li>
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">Smart City</a></li>
+<li><a class="font-inter text-slate-400 text-sm tracking-wide hover:text-[#ffb954] transition-all opacity-80 hover:opacity-100" href="#">Reportaj GO</a></li>
+</ul>
+</div>
+<div class="col-span-4 lg:col-span-1">
+<h5 class="text-white font-bold mb-6">Contact</h5>
+<p class="font-inter text-slate-400 text-sm tracking-wide mb-4">Tashkent, Uzbekistan</p>
+<p class="font-inter text-[#93ccff] text-sm tracking-wide font-bold">info@economicassembly.uz</p>
+</div>
+</div>
+<div class="max-w-[1920px] mx-auto px-12 mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-inter text-slate-400 text-sm tracking-wide opacity-80">© 2024 Economic Assembly of Uzbekistan. Sovereign Lens Editorial.</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary transition-all cursor-pointer">language</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary transition-all cursor-pointer">share</span>
+</div>
+</div>
+</footer>
+  <script src="./shared-nav.js?v=4"></script>
+</body></html>

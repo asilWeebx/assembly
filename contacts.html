@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        "on-background": "var(--on-background)",
+        surface: "var(--surface)",
+        "on-surface": "var(--on-surface)",
+        "surface-variant": "var(--surface-variant)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        primary: "var(--primary)",
+        "on-primary": "var(--on-primary)",
+        "primary-container": "var(--primary-container)",
+        "on-primary-container": "var(--on-primary-container)",
+        secondary: "var(--secondary)",
+        tertiary: "var(--tertiary)",
+        outline: "var(--outline)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      fontFamily: {
+        headline: ["Manrope", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"]
+      }
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation is handled by shared-nav.js -->
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-4xl mb-16">
+<p class="font-label text-[10px] uppercase tracking-widest text-primary mb-4" data-i18n="heroOverline">Свяжитесь с нами</p>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-6" data-i18n="heroTitle">
+                    Государственный масштаб. <br/><span class="text-primary">Прямой диалог.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl" data-i18n="heroText">
+                    Мы открыты для стратегического партнерства и инвестиционных инициатив, направленных на развитие экономики Узбекистана.
+                </p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Contact Info (Left) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Details Card -->
+<div class="glass-card p-8 rounded-xl space-y-8">
+<div>
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label text-[10px] uppercase tracking-widest" data-i18n="addressLabel">Адрес штаб-квартиры</span>
+</div>
+<p class="text-lg text-on-surface font-medium leading-normal" data-i18n="addressValue">Улица Амира Темура, 107Б, Ташкент, 100084, Узбекистан</p>
+</div>
+<div>
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined">call</span>
+<span class="font-label text-[10px] uppercase tracking-widest" data-i18n="phoneLabel">Телефонная линия</span>
+</div>
+<p class="text-2xl text-on-surface font-bold mb-1">+998 (71) 238-91-00</p>
+<p class="text-sm text-on-surface-variant" data-i18n="workingHours">Пн-Пт, 09:00 — 18:00</p>
+</div>
+<div>
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label text-[10px] uppercase tracking-widest" data-i18n="emailLabel">Электронная почта</span>
+</div>
+<p class="text-lg text-on-surface font-medium border-b border-outline-variant inline-block pb-1">info@economicassembly.uz</p>
+</div>
+</div>
+<!-- Socials Card -->
+<div class="glass-card p-8 rounded-xl">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary mb-6 block" data-i18n="socialsLabel">Социальные сети</span>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">share</span>
+</div>
+<span class="text-sm font-medium">Telegram</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">work</span>
+</div>
+<span class="text-sm font-medium">LinkedIn</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">public</span>
+</div>
+<span class="text-sm font-medium">Facebook</span>
+</a>
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">camera</span>
+</div>
+<span class="text-sm font-medium">Instagram</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Contact Form (Center) -->
+<div class="lg:col-span-8">
+<div class="glass-card p-8 md:p-12 rounded-xl h-full">
+<h2 class="text-3xl font-headline font-bold mb-8" data-i18n="writeUs">Напишите нам</h2>
+<form id="contactForm" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant" data-i18n="formName">Ваше имя</label>
+<input name="name" class="w-full bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant py-4 px-5 transition-all outline-variant/15 outline" placeholder="Иван Иванов" type="text" data-i18n="placeholderName" required />
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant" data-i18n="formOrg">Организация</label>
+<input name="org" class="w-full bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant py-4 px-5 transition-all outline-variant/15 outline" placeholder="Название компании" type="text" data-i18n="orgPlaceholder"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant" data-i18n="formEmail">Электронная почта</label>
+<input name="email" class="w-full bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant py-4 px-5 transition-all outline-variant/15 outline" placeholder="email@example.com" type="email" data-i18n="placeholderEmail" required />
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant" data-i18n="formSubject">Тема обращения</label>
+<select name="subject" class="w-full bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface py-4 px-5 transition-all outline-variant/15 outline appearance-none">
+<option data-i18n="subject1">Инвестиционное сотрудничество</option>
+<option data-i18n="subject2">Членство в Ассамблее</option>
+<option data-i18n="subject3">Пресс-служба</option>
+<option data-i18n="subject4">Другое</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant" data-i18n="formMessage">Сообщение</label>
+<textarea name="message" class="w-full bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant py-4 px-5 transition-all outline-variant/15 outline resize-none" placeholder="Опишите ваше предложение или вопрос..." rows="5" data-i18n="messagePlaceholder" required></textarea>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
+<p class="text-xs text-on-surface-variant max-w-sm" data-i18n="formPrivacy">
+                                Нажимая кнопку «Отправить», вы соглашаетесь с нашей Политикой конфиденциальности и условиями обработки данных.
+                            </p>
+<button class="w-full md:w-auto bg-gradient-to-r from-primary to-primary-container text-on-primary px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(147,204,255,0.3)] transition-all" type="submit">
+<span data-i18n="sendRequest">Отправить запрос</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Map Section (Full Width Bento) -->
+<section class="mt-8">
+<div class="glass-card rounded-xl overflow-hidden relative group">
+<div class="h-[500px] w-full bg-surface-container-low grayscale opacity-50 contrast-125" data-alt="Stylized monochromatic architectural city map of Tashkent with deep blue overlays and glowing data points marking the economic district" data-location="Tashkent" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-IOCE0tTE12AtGKRwF6T6pdvIyBdpxxedEgeKrFnqvo-cvGy9jXltqov-NeQCmwDmUAr_cBt_hHsFAjeEb-TKtZRgju4Y0bnVRfzqgQU_OTezspCchLqhafotVPhsz0iYF64gRzld-2ae0KKa-2uYjwDKMoZvmxxsPSfilFPs0zG96RYueceYZptSRiymgD6W2KVqSj-Ty5SVc3D2NCmWVMhd2Mkj9udRHqBUdyroez_h27gXj71i98hv8S3V4rLY1ZCLNQzmz8k'); background-size: cover; background-position: center;">
+</div>
+<!-- Map Overlay Card -->
+<div class="absolute bottom-8 left-8 p-6 bg-surface-dim/90 backdrop-blur-md rounded-xl border border-primary/20 max-w-sm">
+<h3 class="text-xl font-headline font-bold mb-2" data-i18n="ourOffice">Наш офис</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4" data-i18n="officeDesc">
+                        Бизнес-центр премиум-класса, расположенный в самом сердце делового Ташкента.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:underline" href="#">
+<span class="material-symbols-outlined">directions</span>
+<span data-i18n="getDirections">Проложить маршрут</span>
+</a>
+</div>
+<!-- Floating Gradient Decor -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+</div>
+</section>
+</main>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const request = {
+        id: crypto.randomUUID(),
+        name: formData.get('name'),
+        org: formData.get('org'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        status: 'new',
+        createdAt: new Date().toISOString()
+      };
+      
+      const requests = JSON.parse(localStorage.getItem('ea_requests') || '[]');
+      requests.unshift(request);
+      localStorage.setItem('ea_requests', JSON.stringify(requests));
+      
+      alert(window.currentLang === 'uz' ? 'Xabaringiz yuborildi!' : (window.currentLang === 'en' ? 'Message sent!' : 'Ваше сообщение отправлено!'));
+      this.reset();
+    });
+  </script>
+  <script src="./i18n.js"></script>
+  <script src="./shared-nav.js?v=4"></script>
+</body></html>

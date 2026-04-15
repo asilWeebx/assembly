@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        "on-background": "var(--on-background)",
+        surface: "var(--surface)",
+        "on-surface": "var(--on-surface)",
+        "surface-variant": "var(--surface-variant)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        primary: "var(--primary)",
+        "on-primary": "var(--on-primary)",
+        "primary-container": "var(--primary-container)",
+        "on-primary-container": "var(--on-primary-container)",
+        secondary: "var(--secondary)",
+        tertiary: "var(--tertiary)",
+        outline: "var(--outline)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      fontFamily: {
+        headline: ["Manrope", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"]
+      }
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- Navigation is handled by shared-nav.js -->
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center px-12 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-40" data-alt="Modern architectural detail of a glass skyscraper reflecting a deep blue twilight sky with professional corporate lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg0AT53_dIlm6qk7k64D_-yuGnQ85HntvypRY_F-UrKAjaORton5bjUpRvqGVOktE26h2qzBeKdd-sQJcBOVaLZm9BcD6-GONaWnhmGAF2zpUdg9QNygxUNwI0kfXPhCmBpBF7-VEDEPsCVXwDPkT8AQ4DKC7ozVHIyyFVTTf2wHvpFrHOInPVZ2G-pJCfz1kT8NI_wgzHIbF7WaFFS7WR1nETT4X5_dryK7L7chuBjwHuN-2mnBJttDMFk-AwKPKLWTF5wmSfurk"/>
+</div>
+<div class="relative z-20 max-w-4xl">
+<p class="font-label uppercase tracking-widest text-[12px] text-primary mb-6" data-i18n="heroOverline">Архитектура Будущего</p>
+<h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter leading-none mb-8" data-i18n="heroTitle">
+                    Экономическая <br/> <span class="text-primary">Ассамблея</span> Узбекистана
+                </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl" data-i18n="heroText">
+                    Ведущий аналитический и стратегический центр, объединяющий интеллектуальный потенциал и бизнес-инициативы для процветания нации.
+                </p>
+</div>
+</section>
+<!-- Mission & Values (Asymmetric Layout) -->
+<section class="py-32 px-12 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 space-y-8">
+<h2 class="font-['Manrope'] text-4xl font-bold tracking-tight" data-i18n="missionValues">Миссия и ценности</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed" data-i18n="missionValuesDesc">
+                        Мы создаем экосистему, где экономическая свобода встречается с социальной ответственностью. Наши принципы — это фундамент новой экономической реальности страны.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="p-3 rounded-xl bg-primary/10 border border-primary/20 text-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-on-navy" data-i18n="transparency">Прозрачность</h4>
+<p class="text-sm text-slate-400" data-i18n="transparencyDesc">Открытость процессов и данных для каждого участника.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 rounded-xl bg-tertiary/10 border border-tertiary/20 text-tertiary">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-bold text-on-navy" data-i18n="innovation">Инновации</h4>
+<p class="text-sm text-slate-400" data-i18n="innovationDesc">Внедрение передовых цифровых инструментов в управление.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 grid grid-cols-2 gap-4">
+<div class="glass-card p-8 rounded-3xl mt-12">
+<span class="text-5xl font-black text-primary/20 block mb-4">01</span>
+<h3 class="text-xl font-bold mb-2" data-i18n="visionGlobal">Глобальное Видение</h3>
+<p class="text-sm text-on-surface-variant" data-i18n="visionGlobalDesc">Интеграция Узбекистана в мировую финансовую систему через стратегическое партнерство.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl">
+<span class="text-5xl font-black text-primary/20 block mb-4">02</span>
+<h3 class="text-xl font-bold mb-2" data-i18n="growthLocal">Локальный Рост</h3>
+<p class="text-sm text-on-surface-variant" data-i18n="growthLocalDesc">Поддержка региональных инициатив и развитие предпринимательства на местах.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- History Timeline (Horizontal Bento Style) -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-16">
+<h2 class="font-['Manrope'] text-4xl font-bold tracking-tight mb-4" data-i18n="history">История становления</h2>
+<div class="h-1 w-24 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="glass-card p-10 rounded-[2rem] border border-outline-variant/15 flex flex-col justify-between h-[320px] hover:bg-surface-bright/20 transition-all">
+<h3 class="text-4xl font-black text-primary">2018</h3>
+<p class="text-on-surface font-medium leading-tight" data-i18n="history2018">Основание инициативной группы экспертов в Ташкенте.</p>
+<span class="material-symbols-outlined text-primary/40 text-4xl self-end">foundation</span>
+</div>
+<div class="glass-card p-10 rounded-[2rem] border border-outline-variant/15 flex flex-col justify-between h-[320px] bg-primary/5">
+<h3 class="text-4xl font-black text-primary">2020</h3>
+<p class="text-on-surface font-medium leading-tight" data-i18n="history2020">Запуск первого национального инвестиционного портала.</p>
+<span class="material-symbols-outlined text-primary/40 text-4xl self-end">public</span>
+</div>
+<div class="glass-card p-10 rounded-[2rem] border border-outline-variant/15 flex flex-col justify-between h-[320px]">
+<h3 class="text-4xl font-black text-primary">2022</h3>
+<p class="text-on-surface font-medium leading-tight" data-i18n="history2022">Получение статуса официальной Ассамблеи.</p>
+<span class="material-symbols-outlined text-primary/40 text-4xl self-end">gavel</span>
+</div>
+<div class="glass-card p-10 rounded-[2rem] border border-outline-variant/15 flex flex-col justify-between h-[320px] bg-tertiary/5">
+<h3 class="text-4xl font-black text-tertiary">2024</h3>
+<p class="text-on-surface font-medium leading-tight" data-i18n="history2024">Цифровая трансформация и запуск Smart City проектов.</p>
+<span class="material-symbols-outlined text-tertiary/40 text-4xl self-end">smart_assistant</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership (Interactive Cards) -->
+<section class="py-32 px-6 md:px-12 bg-surface-container-lowest">
+  <div class="max-w-screen-2xl mx-auto text-center mb-20">
+    <h2 class="font-headline text-4xl font-bold tracking-tight mb-4" data-i18n="leadership">Руководство</h2>
+    <p class="text-on-surface-variant max-w-2xl mx-auto" data-i18n="leadershipDesc">Наши лидеры — это опытные стратеги и визионеры с международным опытом управления.</p>
+  </div>
+
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+
+    <!-- 1. Muhtor Umarov — Председатель Ассамблеи -->
+    <div class="leader-card group relative overflow-hidden rounded-3xl h-[260px] sm:h-[380px] md:h-[450px] cursor-pointer"
+         data-name="Muhtor Umarov"
+         data-title="Председатель Ассамблеи"
+         data-bio="Председатель Экономической Ассамблеи Узбекистана. Руководит стратегическим развитием организации и координирует работу всех подразделений."
+         data-phone="" data-email=""
+         data-img="./img/1.jpg">
+      <img class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="./img/1.jpg" alt="Muhtor Umarov"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-[#060e1e]/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="absolute top-3 right-3 w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+        <span class="material-symbols-outlined text-white" style="font-size:14px">open_in_full</span>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+        <p class="text-primary font-bold tracking-widest text-[8px] md:text-[10px] uppercase mb-1">Председатель Ассамблеи</p>
+        <h4 class="text-sm md:text-lg font-bold text-white leading-tight">Muhtor Umarov</h4>
+        <p class="text-xs text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-all translate-y-1 group-hover:translate-y-0 hidden md:block">Нажмите для подробностей →</p>
+      </div>
+    </div>
+
+    <!-- 2. Gulrukh Radjabova — Директор -->
+    <div class="leader-card group relative overflow-hidden rounded-3xl h-[260px] sm:h-[380px] md:h-[450px] cursor-pointer"
+         data-name="Gulrukh Radjabova"
+         data-title="Директор"
+         data-bio="Директор Экономической Ассамблеи Узбекистана. Отвечает за операционное управление и реализацию ключевых программ организации."
+         data-phone="" data-email=""
+         data-img="./img/2.JPG">
+      <img class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="./img/2.JPG" alt="Gulrukh Radjabova"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-[#060e1e]/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="absolute top-3 right-3 w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+        <span class="material-symbols-outlined text-white" style="font-size:14px">open_in_full</span>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+        <p class="text-primary font-bold tracking-widest text-[8px] md:text-[10px] uppercase mb-1">Директор</p>
+        <h4 class="text-sm md:text-lg font-bold text-white leading-tight">Gulrukh Radjabova</h4>
+        <p class="text-xs text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-all translate-y-1 group-hover:translate-y-0 hidden md:block">Нажмите для подробностей →</p>
+      </div>
+    </div>
+
+    <!-- 3. Jurabek Matyakubov — Заместитель Председателя -->
+    <div class="leader-card group relative overflow-hidden rounded-3xl h-[260px] sm:h-[380px] md:h-[450px] cursor-pointer"
+         data-name="Jurabek Matyakubov"
+         data-title="Заместитель Председателя"
+         data-bio="Заместитель Председателя Экономической Ассамблеи. Координирует взаимодействие с партнёрами и реализацию стратегических инициатив."
+         data-phone="" data-email=""
+         data-img="./img/3.JPG">
+      <img class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="./img/3.JPG" alt="Jurabek Matyakubov"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-[#060e1e]/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="absolute top-3 right-3 w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+        <span class="material-symbols-outlined text-white" style="font-size:14px">open_in_full</span>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+        <p class="text-primary font-bold tracking-widest text-[8px] md:text-[10px] uppercase mb-1">Заместитель Председателя</p>
+        <h4 class="text-sm md:text-lg font-bold text-white leading-tight">Jurabek Matyakubov</h4>
+        <p class="text-xs text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-all translate-y-1 group-hover:translate-y-0 hidden md:block">Нажмите для подробностей →</p>
+      </div>
+    </div>
+
+    <!-- 4. Malika Ruziyeva — Пресс-секретарь / Зам. Председателя по информполитике -->
+    <div class="leader-card group relative overflow-hidden rounded-3xl h-[260px] sm:h-[380px] md:h-[450px] cursor-pointer"
+         data-name="Malika Ruziyeva"
+         data-title="Пресс-секретарь — Заместитель Председателя по информационной политике"
+         data-bio="Отвечает за медиа-стратегию и информационную политику Ассамблеи. Формирует публичный образ организации и выстраивает коммуникации со СМИ."
+         data-phone="" data-email=""
+         data-img="./img/4.JPG">
+      <img class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="./img/4.JPG" alt="Malika Ruziyeva"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-[#060e1e]/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="absolute top-3 right-3 w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+        <span class="material-symbols-outlined text-white" style="font-size:14px">open_in_full</span>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+        <p class="text-primary font-bold tracking-widest text-[8px] md:text-[10px] uppercase mb-1">Пресс-секретарь</p>
+        <h4 class="text-sm md:text-lg font-bold text-white leading-tight">Malika Ruziyeva</h4>
+        <p class="text-xs text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-all translate-y-1 group-hover:translate-y-0 hidden md:block">Нажмите для подробностей →</p>
+      </div>
+    </div>
+
+    <!-- 5. Mirsulton Mirzarakhmatov — Начальник отдела по работе с госорганами -->
+    <div class="leader-card group relative overflow-hidden rounded-3xl h-[260px] sm:h-[380px] md:h-[450px] cursor-pointer"
+         data-name="Mirsulton Mirzarakhmatov"
+         data-title="Начальник отдела по работе с государственными органами"
+         data-bio="Руководит взаимодействием Ассамблеи с государственными органами и ведомствами. Обеспечивает реализацию государственно-частного партнёрства."
+         data-phone="" data-email=""
+         data-img="./img/5.jpg">
+      <img class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="./img/5.jpg" alt="Mirsulton Mirzarakhmatov"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060e1e] via-[#060e1e]/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div class="absolute top-3 right-3 w-7 h-7 md:w-8 md:h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+        <span class="material-symbols-outlined text-white" style="font-size:14px">open_in_full</span>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 p-3 md:p-6">
+        <p class="text-primary font-bold tracking-widest text-[8px] md:text-[10px] uppercase mb-1">Нач. отдела по работе с госорганами</p>
+        <h4 class="text-sm md:text-lg font-bold text-white leading-tight">Mirsulton Mirzarakhmatov</h4>
+        <p class="text-xs text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-all translate-y-1 group-hover:translate-y-0 hidden md:block">Нажмите для подробностей →</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Leader Modal -->
+<div id="leaderModal" style="display:none" class="fixed inset-0 z-[200] flex items-end sm:items-center justify-center p-0 sm:p-6">
+  <div id="leaderModalBackdrop" class="absolute inset-0 bg-black/75 backdrop-blur-md" style="opacity:0;transition:opacity 0.3s ease"></div>
+  <div id="leaderModalPanel" class="relative w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl z-10 bg-surface"
+       style="transform:translateY(80px);opacity:0;transition:transform 0.4s cubic-bezier(0.34,1.4,0.64,1),opacity 0.3s ease">
+    <!-- Photo -->
+    <div class="relative h-56 sm:h-72 overflow-hidden flex-shrink-0">
+      <img id="leaderModalImg" src="" alt="" class="w-full h-full object-cover object-top"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/30 to-transparent"></div>
+      <button id="leaderModalClose"
+              class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/50 transition-all active:scale-90"
+              aria-label="Закрыть">
+        <span class="material-symbols-outlined" style="font-size:20px">close</span>
+      </button>
+      <div class="absolute bottom-0 left-0 right-0 p-6">
+        <p id="leaderModalTitle" class="text-primary font-bold tracking-widest text-[10px] uppercase mb-2"></p>
+        <h3 id="leaderModalName" class="text-2xl sm:text-3xl font-black text-white leading-tight"></h3>
+      </div>
+    </div>
+    <!-- Info -->
+    <div class="p-6 space-y-4">
+      <p id="leaderModalBio" class="text-on-surface-variant text-sm leading-relaxed"></p>
+      <div class="h-px bg-outline-variant/20 my-2"></div>
+      <p class="text-[10px] uppercase tracking-widest text-primary font-bold">Контакты</p>
+      <a id="leaderModalPhone" href="#" class="flex items-center gap-3 p-3 rounded-2xl hover:bg-surface-variant/30 transition-all active:scale-98 group/c">
+        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover/c:bg-primary/20 transition-colors flex-shrink-0">
+          <span class="material-symbols-outlined" style="font-size:18px">phone</span>
+        </div>
+        <div class="min-w-0">
+          <p class="text-[10px] text-on-surface-variant">Телефон</p>
+          <p id="leaderModalPhoneText" class="text-sm font-semibold text-on-surface group-hover/c:text-primary transition-colors truncate"></p>
+        </div>
+      </a>
+      <a id="leaderModalEmail" href="#" class="flex items-center gap-3 p-3 rounded-2xl hover:bg-surface-variant/30 transition-all active:scale-98 group/c">
+        <div class="w-10 h-10 rounded-xl bg-tertiary/10 border border-tertiary/20 flex items-center justify-center text-tertiary group-hover/c:bg-tertiary/20 transition-colors flex-shrink-0">
+          <span class="material-symbols-outlined" style="font-size:18px">mail</span>
+        </div>
+        <div class="min-w-0">
+          <p class="text-[10px] text-on-surface-variant">Email</p>
+          <p id="leaderModalEmailText" class="text-sm font-semibold text-on-surface group-hover/c:text-tertiary transition-colors truncate"></p>
+        </div>
+      </a>
+    </div>
+    <!-- Safe area for mobile -->
+    <div class="h-safe-area-inset-bottom pb-4 bg-surface"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal    = document.getElementById('leaderModal');
+  var backdrop = document.getElementById('leaderModalBackdrop');
+  var panel    = document.getElementById('leaderModalPanel');
+  var closeBtn = document.getElementById('leaderModalClose');
+
+  function open(card) {
+    document.getElementById('leaderModalImg').src   = card.dataset.img;
+    document.getElementById('leaderModalImg').alt   = card.dataset.name;
+    document.getElementById('leaderModalName').textContent  = card.dataset.name;
+    document.getElementById('leaderModalTitle').textContent = card.dataset.title;
+    document.getElementById('leaderModalBio').textContent   = card.dataset.bio;
+
+    var phone = card.dataset.phone;
+    document.getElementById('leaderModalPhone').href = 'tel:' + phone.replace(/\s/g,'');
+    document.getElementById('leaderModalPhoneText').textContent = phone;
+
+    var email = card.dataset.email;
+    document.getElementById('leaderModalEmail').href = 'mailto:' + email;
+    document.getElementById('leaderModalEmailText').textContent = email;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        backdrop.style.opacity = '1';
+        panel.style.opacity = '1';
+        panel.style.transform = 'translateY(0)';
+      });
+    });
+  }
+
+  function close() {
+    backdrop.style.opacity = '0';
+    panel.style.opacity = '0';
+    panel.style.transform = 'translateY(80px)';
+    setTimeout(function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 380);
+  }
+
+  document.querySelectorAll('.leader-card').forEach(function(card) {
+    card.addEventListener('click', function() { open(card); });
+  });
+  closeBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+<!-- Strategic Goals (Glassmorphic Feature List) -->
+<section class="py-32 px-12 bg-surface">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+<div class="w-full md:w-1/3">
+<h2 class="font-['Manrope'] text-5xl font-extrabold tracking-tighter leading-tight mb-8" data-i18n="strategyTitle">Стратегические цели 2030</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8" data-i18n="strategyDesc">Мы нацелены на создание устойчивого фундамента, который обеспечит конкурентоспособность экономики Узбекистана на мировой арене.</p>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+<span data-i18n="strategyMore">Подробнее о стратегии</span> <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="glass-card p-10 rounded-3xl">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<h3 class="text-xl font-bold mb-4" data-i18n="gdpExport">ВВП и Экспорт</h3>
+<p class="text-sm text-on-surface-variant" data-i18n="gdpExportDesc">Увеличение доли высокотехнологичного экспорта до 25% от общего объема к 2030 году.</p>
+</div>
+<div class="glass-card p-10 rounded-3xl">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-xl font-bold mb-4" data-i18n="humanCapital">Кадровый Капитал</h3>
+<p class="text-sm text-on-surface-variant" data-i18n="humanCapitalDesc">Подготовка 10,000+ сертифицированных специалистов международного уровня ежегодно.</p>
+</div>
+<div class="glass-card p-10 rounded-3xl">
+<div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<h3 class="text-xl font-bold mb-4" data-i18n="greenEconomy">Зеленая Экономика</h3>
+<p class="text-sm text-on-surface-variant" data-i18n="greenEconomyDesc">Снижение углеродного следа производственного сектора на 15% за счет новых технологий.</p>
+</div>
+<div class="glass-card p-10 rounded-3xl">
+<div class="w-12 h-12 rounded-full bg-on-navy/10 flex items-center justify-center text-on-navy mb-6">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<h3 class="text-xl font-bold mb-4" data-i18n="infrastructure">Инфраструктура</h3>
+<p class="text-sm text-on-surface-variant" data-i18n="infrastructureDesc">Создание цифровой сети хабов, связывающих все регионы страны в единую сеть.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim w-full py-12 px-12 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto space-y-8 md:space-y-0">
+<div class="text-left">
+<div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+<div class="text-on-surface-variant text-sm max-w-xs" data-i18n="copyright">
+                    © 2026 Economic Assembly of Uzbekistan.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-8 text-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="privacyPolicy">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="termsOfService">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="investmentPortal">Investment Portal</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="sitemap">Sitemap</a>
+</div>
+</div>
+</footer>
+  <script src="./i18n.js"></script>
+  <script src="./shared-nav.js?v=4"></script>
+</body></html>

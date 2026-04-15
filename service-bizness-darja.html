@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bizness Darcha | Economic Assembly</title>
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .soft-panel {
+        position: relative;
+        overflow: hidden;
+      }
+      .soft-panel::after {
+        content: "";
+        position: absolute;
+        inset: auto -30% -55% auto;
+        width: 280px;
+        height: 280px;
+        border-radius: 9999px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.16), transparent 68%);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-['Inter']">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-12">
+      <a href="./services.html" class="inline-flex items-center gap-2 text-sm text-[#93ccff] hover:text-[#c6e7ff] transition-colors">
+        <span>←</span>
+        <span data-i18n="allServices">Все услуги</span>
+      </a>
+
+      <section class="mt-6 md:mt-7 glass-card soft-panel rounded-3xl p-5 sm:p-6 md:p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 md:gap-10 items-start">
+          <div>
+            <div class="flex flex-wrap items-center gap-3 text-sm text-on-surface-variant">
+              <span data-i18n="heroLabel">Бизнес Даржа</span>
+              <span class="px-3 py-1 rounded-full bg-primary/15 text-primary text-xs border border-primary/40" data-i18n="heroStatus">Активно</span>
+            </div>
+            <h1 class="font-['Manrope'] text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 leading-[0.95] tracking-tight">
+              <span data-i18n="heroTitlePrefix">Biznes</span> <span class="text-gradient" data-i18n="heroTitleAccent">DARCHA</span>
+            </h1>
+            <p class="text-on-surface-variant mt-4 md:mt-6 text-base sm:text-lg leading-relaxed max-w-xl" data-i18n="heroDesc">
+              Единое окно для всех деловых услуг. Профессиональное решение вопросов документации, бухгалтерии, юридических и лицензионных услуг.
+            </p>
+            <div class="mt-6 md:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
+              <a href="./contacts.html" class="btn-primary w-full sm:w-auto px-7 py-3 rounded-full text-center" data-i18n="heroPrimaryBtn">
+                Подать заявку
+              </a>
+              <a href="#services" class="w-full sm:w-auto px-7 py-3 rounded-full border border-outline text-on-surface hover:bg-surface-variant transition-colors text-center" data-i18n="heroSecondaryBtn">
+                Наши услуги
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+            <div class="glass-card rounded-2xl p-4 md:p-5">
+              <p class="font-['Manrope'] text-3xl md:text-4xl font-extrabold leading-none">1000+</p>
+              <p class="mt-2 font-semibold" data-i18n="statClientsTitle">Клиентов</p>
+              <p class="text-sm text-on-surface-variant" data-i18n="statClientsDesc">Обслужено</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 md:p-5">
+              <p class="font-['Manrope'] text-3xl md:text-4xl font-extrabold leading-none">50+</p>
+              <p class="mt-2 font-semibold" data-i18n="statServicesTitle">Услуг</p>
+              <p class="text-sm text-on-surface-variant" data-i18n="statServicesDesc">Доступно</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 md:p-5">
+              <p class="font-['Manrope'] text-3xl md:text-4xl font-extrabold leading-none">24/7</p>
+              <p class="mt-2 font-semibold" data-i18n="statSupportTitle">Поддержка</p>
+              <p class="text-sm text-on-surface-variant" data-i18n="statSupportDesc">Без выходных</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 md:p-5">
+              <p class="font-['Manrope'] text-3xl md:text-4xl font-extrabold leading-none">98%</p>
+              <p class="mt-2 font-semibold" data-i18n="statSatisfactionTitle">Удовлетворенность</p>
+              <p class="text-sm text-on-surface-variant" data-i18n="statSatisfactionDesc">Клиентов</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="pt-10 mt-8 border-t border-outline-variant/40">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#9fd6f6]" data-i18n="servicesLabel">Наши услуги</p>
+        <h2 class="mt-3 md:mt-4 font-['Manrope'] text-2xl sm:text-3xl md:text-4xl font-bold">
+          <span data-i18n="servicesTitlePrefix">Профессиональные</span> <span class="text-gradient" data-i18n="servicesTitleAccent">Бизнес-услуги</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+          <article class="glass-card rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="cardDocTitle">Документация</h3>
+            <p class="text-on-surface-variant mt-3" data-i18n="cardDocDesc">Подготовка и оформление всех видов деловых документов.</p>
+          </article>
+          <article class="glass-card rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="cardAccountingTitle">Бухгалтерия</h3>
+            <p class="text-on-surface-variant mt-3" data-i18n="cardAccountingDesc">Профессиональный учет и налоговая отчетность.</p>
+          </article>
+          <article class="glass-card rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="cardLegalTitle">Юридические услуги</h3>
+            <p class="text-on-surface-variant mt-3" data-i18n="cardLegalDesc">Правовые консультации и договорное сопровождение.</p>
+          </article>
+          <article class="glass-card rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="cardLicenseTitle">Лицензирование</h3>
+            <p class="text-on-surface-variant mt-3" data-i18n="cardLicenseDesc">Получение лицензий и разрешительных документов.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pt-10 mt-10 border-t border-outline-variant/40">
+        <p class="text-sm text-center text-on-surface-variant" data-i18n="categoryLabel">Категории услуг</p>
+        <h2 class="mt-3 text-center font-['Manrope'] text-2xl sm:text-3xl md:text-4xl font-bold">
+          <span data-i18n="categoryTitlePrefix">Полный спектр</span> <span class="text-gradient" data-i18n="categoryTitleAccent">Решений</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-9">
+          <article class="glass-card soft-panel rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl md:text-3xl font-bold" data-i18n="catBusinessRegTitle">Регистрация бизнеса</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="catBusinessRegDesc">Полная поддержка при открытии и регистрации бизнеса.</p>
+            <ul class="mt-4 space-y-2 text-sm text-on-surface-variant">
+              <li data-i18n="catBusinessRegItem1">• Регистрация ООО и ИП</li>
+              <li data-i18n="catBusinessRegItem2">• Внесение изменений в устав</li>
+              <li data-i18n="catBusinessRegItem3">• Ликвидация компаний</li>
+              <li data-i18n="catBusinessRegItem4">• Реорганизация бизнеса</li>
+            </ul>
+          </article>
+          <article class="glass-card soft-panel rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl md:text-3xl font-bold" data-i18n="catTaxTitle">Налоговые услуги</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="catTaxDesc">Профессиональное налоговое планирование и отчетность.</p>
+            <ul class="mt-4 space-y-2 text-sm text-on-surface-variant">
+              <li data-i18n="catTaxItem1">• Налоговые декларации</li>
+              <li data-i18n="catTaxItem2">• Налоговое планирование</li>
+              <li data-i18n="catTaxItem3">• Налоговые консультации</li>
+              <li data-i18n="catTaxItem4">• Взаимодействие с ГНС</li>
+            </ul>
+          </article>
+          <article class="glass-card soft-panel rounded-3xl p-6">
+            <h3 class="font-['Manrope'] text-2xl md:text-3xl font-bold" data-i18n="catHrTitle">Кадровые услуги</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="catHrDesc">Полное кадровое сопровождение и документооборот.</p>
+            <ul class="mt-4 space-y-2 text-sm text-on-surface-variant">
+              <li data-i18n="catHrItem1">• Трудовые договоры</li>
+              <li data-i18n="catHrItem2">• Кадровый учет</li>
+              <li data-i18n="catHrItem3">• Расчет заработной платы</li>
+              <li data-i18n="catHrItem4">• Кадровый аудит</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="mt-12 glass-card rounded-3xl p-6 sm:p-8 md:p-10">
+        <h2 class="text-center font-['Manrope'] text-3xl md:text-4xl font-bold" data-i18n="whyTitle">Почему выбирают нас?</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mt-8 text-center">
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="whyFastTitle">Быстро</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="whyFastDesc">Оперативное и своевременное выполнение всех услуг.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="whyManagerTitle">Персональный менеджер</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="whyManagerDesc">Индивидуальный подход и персональное сопровождение каждого клиента.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="whyQualityTitle">Гарантия качества</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="whyQualityDesc">Гарантированно высокий стандарт и качество предоставляемых услуг.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-5">
+            <h3 class="font-['Manrope'] text-2xl font-bold" data-i18n="whyGovTitle">Взаимодействие с госорганами</h3>
+            <p class="text-on-surface-variant mt-2" data-i18n="whyGovDesc">Прямое и эффективное взаимодействие с профильными государственными структурами.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-12 pb-4 text-center">
+        <h2 class="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl font-bold">
+          <span data-i18n="ctaTitlePrefix">Упростите свой</span> <span class="text-gradient" data-i18n="ctaTitleAccent">Бизнес</span>
+        </h2>
+        <p class="text-on-surface-variant mt-4 max-w-3xl mx-auto px-1" data-i18n="ctaDesc">
+          Свяжитесь с нами, чтобы получить профессиональные бизнес-услуги и экспертные консультации.
+        </p>
+        <a href="./contacts.html" class="inline-block btn-primary mt-7 w-full sm:w-auto px-8 py-3 rounded-full" data-i18n="ctaButton">
+          Связаться
+        </a>
+      </section>
+    </main>
+    <footer class="bg-surface-dim w-full py-12 px-6 md:px-12 border-t border-outline-variant/10">
+      <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto space-y-8 md:space-y-0">
+        <div class="text-left">
+          <div class="mb-8"><img src="./img/assembly-logo-uz.png" alt="Economic Assembly" class="h-20 md:h-36 w-auto object-contain dark:brightness-100 brightness-0 transition-all hover:scale-105"></div>
+          <div class="text-on-surface-variant text-sm max-w-xs" data-i18n="copyright">© 2026 Economic Assembly of Uzbekistan.</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="privacyPolicy">Privacy Policy</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="termsOfService">Terms of Service</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="investmentPortal">Investment Portal</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#" data-i18n="sitemap">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./i18n.js"></script>
+    <script src="./shared-nav.js?v=4"></script>
+  </body>
+</html>
