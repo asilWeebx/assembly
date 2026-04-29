@@ -49,8 +49,7 @@ tailwind.config = {
 <section class="max-w-4xl mb-16">
 <p class="font-label text-[10px] uppercase tracking-widest text-primary mb-4" data-i18n="heroOverline">Свяжитесь с нами</p>
 <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-6" data-i18n="heroTitle">
-                    Государственный масштаб. <br/><span class="text-primary">Прямой диалог.</span>
-</h1>
+                    Государственный масштаб. <br/>
 <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl" data-i18n="heroText">
                     Мы открыты для стратегического партнерства и инвестиционных инициатив, направленных на развитие экономики Узбекистана.
                 </p>
@@ -87,25 +86,25 @@ tailwind.config = {
 <div class="glass-card p-8 rounded-xl">
 <span class="font-label text-[10px] uppercase tracking-widest text-primary mb-6 block" data-i18n="socialsLabel">Социальные сети</span>
 <div class="grid grid-cols-2 gap-4">
-<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="https://t.me/uzassembly">
 <div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
 <span class="material-symbols-outlined text-xl">share</span>
 </div>
 <span class="text-sm font-medium">Telegram</span>
 </a>
-<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="https://www.linkedin.com/in/assembly-uz-4b27023a5?utm_source=share_via&utm_content=profile&utm_medium=member_android">
 <div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
 <span class="material-symbols-outlined text-xl">work</span>
 </div>
 <span class="text-sm font-medium">LinkedIn</span>
 </a>
-<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="https://www.facebook.com/share/1AwFxJfetA/">
 <div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
 <span class="material-symbols-outlined text-xl">public</span>
 </div>
 <span class="text-sm font-medium">Facebook</span>
 </a>
-<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="#">
+<a class="flex items-center gap-3 p-4 bg-surface-container-lowest rounded-lg hover:bg-primary/10 transition-all border border-transparent hover:border-primary/20 group" href="https://www.instagram.com/assemblyuz?igsh=MWlqMWx0MnV6ZXFiYw==">
 <div class="w-8 h-8 flex items-center justify-center bg-surface-container-high rounded text-on-surface group-hover:text-primary">
 <span class="material-symbols-outlined text-xl">camera</span>
 </div>
@@ -161,27 +160,35 @@ tailwind.config = {
 </div>
 </div>
 </div>
-<!-- Map Section (Full Width Bento) -->
 <section class="mt-8">
-<div class="glass-card rounded-xl overflow-hidden relative group">
-<div class="h-[500px] w-full bg-surface-container-low grayscale opacity-50 contrast-125" data-alt="Stylized monochromatic architectural city map of Tashkent with deep blue overlays and glowing data points marking the economic district" data-location="Tashkent" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-IOCE0tTE12AtGKRwF6T6pdvIyBdpxxedEgeKrFnqvo-cvGy9jXltqov-NeQCmwDmUAr_cBt_hHsFAjeEb-TKtZRgju4Y0bnVRfzqgQU_OTezspCchLqhafotVPhsz0iYF64gRzld-2ae0KKa-2uYjwDKMoZvmxxsPSfilFPs0zG96RYueceYZptSRiymgD6W2KVqSj-Ty5SVc3D2NCmWVMhd2Mkj9udRHqBUdyroez_h27gXj71i98hv8S3V4rLY1ZCLNQzmz8k'); background-size: cover; background-position: center;">
-</div>
-<!-- Map Overlay Card -->
-<div class="absolute bottom-8 left-8 p-6 bg-surface-dim/90 backdrop-blur-md rounded-xl border border-primary/20 max-w-sm">
-<h3 class="text-xl font-headline font-bold mb-2" data-i18n="ourOffice">Наш офис</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed mb-4" data-i18n="officeDesc">
-                        Бизнес-центр премиум-класса, расположенный в самом сердце делового Ташкента.
-                    </p>
-<a class="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:underline" href="#">
-<span class="material-symbols-outlined">directions</span>
-<span data-i18n="getDirections">Проложить маршрут</span>
-</a>
-</div>
-<!-- Floating Gradient Decor -->
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32"></div>
-</div>
+    <div class="glass-card rounded-xl overflow-hidden relative group">
+        <!-- Интерактивная карта -->
+        <div class="h-[500px] w-full bg-surface-container-low">
+            <iframe 
+                src="https://yandex.ru/map-widget/v1/?ll=69.282733%2C41.312328&z=15" 
+                width="100%" height="100%" frameborder="0" allowfullscreen="true"
+                class="grayscale contrast-125 opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+            </iframe>
+        </div>
+
+        <!-- Map Overlay Card -->
+        <div class="absolute bottom-8 left-8 p-6 bg-surface-dim/90 backdrop-blur-md rounded-xl border border-primary/20 max-w-sm z-10">
+            <h3 class="text-xl font-headline font-bold mb-2" data-i18n="ourOffice">Наш офис</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-4" data-i18n="officeDesc">
+                Бизнес-центр премиум-класса, расположенный в самом сердце делового Ташкента.
+            </p>
+            <!-- Ссылка на маршрут -->
+            <a class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:text-secondary transition-colors" 
+               href="https://maps.google.com/?q=Tashkent" target="_blank">
+                <span class="material-symbols-outlined">directions</span>
+                <span data-i18n="getDirections">Проложить маршрут</span>
+            </a>
+        </div>
+
+        <!-- Floating Gradient Decor -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32 pointer-events-none"></div>
+    </div>
 </section>
-</main>
 
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
