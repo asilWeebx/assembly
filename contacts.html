@@ -191,28 +191,43 @@ tailwind.config = {
 </section>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const request = {
-        id: crypto.randomUUID(),
-        name: formData.get('name'),
-        org: formData.get('org'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        message: formData.get('message'),
-        status: 'new',
-        createdAt: new Date().toISOString()
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const fd = new FormData(this);
+ 
+    const payload = {
+      name: fd.get('name'),
+      org: fd.get('org') || '',
+      email: fd.get('email'),
+      subject: fd.get('subject'),
+      message: fd.get('message'),
+    };
+ 
+    const btn = this.querySelector('button[type=submit]');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+ 
+    try {
+      await Api.createRequest(payload);
+      const lang = window.currentLang || localStorage.getItem('ea_lang') || 'ru';
+      const msg = {
+        uz: 'Xabaringiz yuborildi! Tez orada javob beramiz.',
+        en: 'Your message has been sent! We will respond shortly.',
+        ru: 'Ваше сообщение отправлено! Мы ответим в ближайшее время.',
       };
-      
-      const requests = JSON.parse(localStorage.getItem('ea_requests') || '[]');
-      requests.unshift(request);
-      localStorage.setItem('ea_requests', JSON.stringify(requests));
-      
-      alert(window.currentLang === 'uz' ? 'Xabaringiz yuborildi!' : (window.currentLang === 'en' ? 'Message sent!' : 'Ваше сообщение отправлено!'));
+      alert(msg[lang] || msg.ru);
       this.reset();
-    });
-  </script>
+    } catch (err) {
+      alert('Ошибка отправки. Попробуйте позже.');
+      console.error(err);
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+    }
+  });
+</script>
+ 
   <script src="./i18n.js"></script>
   <script src="./shared-nav.js?v=4"></script>
 </body></html>

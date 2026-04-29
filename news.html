@@ -100,97 +100,105 @@
       </div>
     </div>
 
-    <script src="./i18n.js"></script>
-    <script src="./shared-nav.js?v=4"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const news = JSON.parse(localStorage.getItem("ea_news") || "[]");
-        const root = document.getElementById("publicNewsList");
-        const empty = document.getElementById("emptyNews");
-        
-        if (!news.length) {
-          empty.classList.remove("hidden");
-        } else {
-          root.innerHTML = news
-            .map(
-              (item, index) => `
-                <article class="glass-card flex flex-col rounded-[2.5rem] overflow-hidden group hover:translate-y-[-8px] transition-all duration-500 cursor-pointer" onclick="openNewsModal(${index})">
-                  <div class="relative h-64 overflow-hidden shrink-0">
-                    ${item.image ? `
-                      <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    ` : `
-                      <div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-4xl text-primary/40">image</span>
-                      </div>
-                    `}
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
-                    <div class="absolute bottom-6 left-6">
-                       <span class="px-2 py-1 rounded-lg bg-background/40 backdrop-blur-md text-on-surface text-[10px] font-bold tracking-widest border border-white/5">
-                        ${item.date || ""}
-                       </span>
-                    </div>
-                  </div>
-                  <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="font-headline text-2xl font-black mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
-                      ${item.title}
-                    </h3>
-                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-custom flex-grow">
-                      ${item.content}
-                    </p>
-                    <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mt-auto group-hover:gap-4 transition-all duration-300">
-                      <span data-i18n="readMore">Подробнее</span>
-                      <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </div>
-                  </div>
-                </article>`
-            )
-            .join("");
-            
-           // Apply translations again after content injection
-           if (window.applyTranslations) window.applyTranslations(localStorage.getItem("ea_lang") || "ru");
-        }
-
-        const modal = document.getElementById("newsModal");
-        const modalContent = document.getElementById("modalContent");
-        
-        window.openNewsModal = (idx) => {
-          const item = news[idx];
-          if (!item) return;
-          
-          document.getElementById("modalTitle").textContent = item.title;
-          document.getElementById("modalBody").textContent = item.content;
-          document.getElementById("modalDate").textContent = item.date || "";
-          
-          const mImg = document.getElementById("modalImage");
-          const mImgContainer = document.getElementById("modalImageContainer");
-          if (item.image) {
-            mImg.src = item.image;
-            mImgContainer.classList.remove("hidden");
-          } else {
-            mImgContainer.classList.add("hidden");
-          }
-          
-          modal.classList.remove("hidden");
-          setTimeout(() => {
-            modalContent.classList.remove("scale-95", "opacity-0");
-            modalContent.classList.add("scale-100", "opacity-100");
-          }, 10);
-          document.body.style.overflow = "hidden";
-        };
-        
-        const closeMod = () => {
-          modalContent.classList.add("scale-95", "opacity-0");
-          modalContent.classList.remove("scale-100", "opacity-100");
-          setTimeout(() => {
-            modal.classList.add("hidden");
-          }, 300);
-          document.body.style.overflow = "";
-        };
-        
-        document.getElementById("closeModal").onclick = closeMod;
-        document.getElementById("modalOverlay").onclick = closeMod;
-      });
-    </script>
+   
+    <script src="./api.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const root = document.getElementById("publicNewsList");
+    const empty = document.getElementById("emptyNews");
+ 
+    let news = [];
+    try {
+      news = await Api.getNews();
+    } catch (e) {
+      console.error('News fetch error:', e);
+    }
+ 
+    if (!news.length) {
+      empty.classList.remove("hidden");
+    } else {
+      root.innerHTML = news.map((item, index) => `
+        <article
+          class="glass-card flex flex-col rounded-[2.5rem] overflow-hidden group hover:translate-y-[-8px] transition-all duration-500 cursor-pointer"
+          onclick="openNewsModal(${index})"
+        >
+          <div class="relative h-64 overflow-hidden shrink-0">
+            ${item.image_url ? `
+              <img
+                src="${item.image_url}"
+                alt="${item.title}"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+            ` : `
+              <div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-primary/40">image</span>
+              </div>
+            `}
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-6 left-6">
+              <span class="px-2 py-1 rounded-lg bg-background/40 backdrop-blur-md text-on-surface text-[10px] font-bold tracking-widest border border-white/5">
+                ${item.date || ""}
+              </span>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="font-headline text-2xl font-black mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
+              ${item.title}
+            </h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-custom flex-grow">
+              ${item.content}
+            </p>
+            <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mt-auto group-hover:gap-4 transition-all duration-300">
+              <span data-i18n="readMore">Подробнее</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </article>
+      `).join("");
+ 
+      if (window.applyTranslations) window.applyTranslations(localStorage.getItem("ea_lang") || "ru");
+    }
+ 
+    // ─── Modal ────────────────────────────────────────────────
+    const modal = document.getElementById("newsModal");
+    const modalContent = document.getElementById("modalContent");
+ 
+    window.openNewsModal = (idx) => {
+      const item = news[idx];
+      if (!item) return;
+ 
+      document.getElementById("modalTitle").textContent = item.title;
+      document.getElementById("modalBody").textContent = item.content;
+      document.getElementById("modalDate").textContent = item.date || "";
+ 
+      const mImg = document.getElementById("modalImage");
+      const mImgContainer = document.getElementById("modalImageContainer");
+      if (item.image_url) {
+        mImg.src = item.image_url;
+        mImgContainer.classList.remove("hidden");
+      } else {
+        mImgContainer.classList.add("hidden");
+      }
+ 
+      modal.classList.remove("hidden");
+      setTimeout(() => {
+        modalContent.classList.remove("scale-95", "opacity-0");
+        modalContent.classList.add("scale-100", "opacity-100");
+      }, 10);
+      document.body.style.overflow = "hidden";
+    };
+ 
+    const closeMod = () => {
+      modalContent.classList.add("scale-95", "opacity-0");
+      modalContent.classList.remove("scale-100", "opacity-100");
+      setTimeout(() => modal.classList.add("hidden"), 300);
+      document.body.style.overflow = "";
+    };
+ 
+    document.getElementById("closeModal").onclick = closeMod;
+    document.getElementById("modalOverlay").onclick = closeMod;
+  });
+</script><
     <script src="./i18n.js"></script>
     <script src="./shared-nav.js?v=4"></script>
   </body>
