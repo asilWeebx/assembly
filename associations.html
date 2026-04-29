@@ -69,64 +69,76 @@ tailwind.config = {
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="p-8 group cursor-pointer glass-card rounded-xl">
-<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
-<span class="material-symbols-outlined text-3xl">business_center</span>
-</div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="consulting">Бизнес и Консалтинг</h3>
-<p class="text-sm text-slate-500">12 <span data-i18n="activeOrgs">действующих организаций</span></p>
-</div>
-<!-- Card 2 -->
-<div class="p-8 group cursor-pointer glass-card rounded-xl border-x border-outline-variant/10 bg-white/[0.02]">
-<div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6 group-hover:bg-tertiary group-hover:text-on-tertiary transition-all duration-500">
-<span class="material-symbols-outlined text-3xl">developer_board</span>
-</div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="techHub">Технологический Хаб</h3>
-<p class="text-sm text-slate-500">8 <span data-i18n="itAssoc">ИТ-ассоциаций</span></p>
-</div>
-<!-- Card 3 -->
-<div class="glass-card p-8 rounded-xl group hover:bg-surface-container-highest/60 transition-all cursor-pointer md:col-span-2">
-<div class="flex h-full gap-8">
-<div class="flex-1">
-<div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-all duration-500">
-<span class="material-symbols-outlined text-3xl">account_balance</span>
-</div>
-<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="finance">Финансовый Сектор</h3>
-<p class="text-xs text-slate-600 leading-tight" data-i18n="financeDesc">Банковское дело, микрофинансирование и финтех-инициативы на государственном уровне.</p>
-</div>
-<div class="hidden sm:block w-48 rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all">
-<img alt="Banking" class="w-full h-full object-cover" data-alt="Close-up of modern skyscraper glass facade reflecting deep blue sky with geometric patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0UG32jeM7Sgpxots3t-HFJSs_yDCAuZoFu4lFYFPmOrckiddiRMMMkJbmzv810lTOIggDhI87CNoDdzbkkAlPbFhJJsNPSGAdrzk5Lk4JgpGlLL5Tt12hcWWqTfz-546Fpm-ReF9Rav9BiJpdgUZ00ruwcgWO-KV80usIUfSIFiQWqXC_vWPMLx_iWGIlar2Vrbwsn9OAnTX3MF7WwvH-Zv6gAafO9ZiQ_7gJGUTgU-VrnZSHriyJw55JdaEvjUfd17ABs5-Xtn8"/>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="p-8 group cursor-pointer glass-card rounded-xl">
-<div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 mb-6 group-hover:bg-white group-hover:text-slate-900 transition-all">
-<span class="material-symbols-outlined text-2xl">factory</span>
-</div>
-<h4 class="font-bold mb-2" data-i18n="industry">Промышленность</h4>
-<p class="text-xs text-slate-500" data-i18n="heavyIndustry">Тяжелое машиностроение</p>
-</div>
-<!-- Card 5 -->
-<div class="glass-card p-8 rounded-xl group hover:bg-surface-container-highest/60 transition-all cursor-pointer">
-<span class="material-symbols-outlined text-4xl text-tertiary mb-6" data-icon="school">school</span>
-<h3 class="font-headline text-xl font-bold mb-3 ">Образование</h3>
-<p class="text-sm text-on-surface-variant mb-6">Edu-Tech и университеты</p>
-<div class="flex -space-x-3">
-<div class="w-8 h-8 rounded-full bg-surface-bright border-2 border-surface flex items-center justify-center text-[10px] font-bold">E</div>
-<div class="w-8 h-8 rounded-full bg-surface-bright border-2 border-surface flex items-center justify-center text-[10px] font-bold">D</div>
-<div class="w-8 h-8 rounded-full bg-surface-bright border-2 border-surface flex items-center justify-center text-[10px] font-bold">U</div>
-</div>
-</div>
-<!-- Card 6 (Interactive Callout) -->
-<div class="bg-primary/5 rounded-[2.5rem] p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/20 md:col-span-2">
-<div>
-<h3 class="text-3xl font-bold mb-2" data-i18n="joinUsTitle">Ваша ассоциация еще не с нами?</h3>
-<p class="text-slate-400" data-i18n="joinUsDesc">Присоединяйтесь к крупнейшему экономическому сообществу страны.</p>
-</div>
-<button class="bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold hover:shadow-2xl hover:shadow-primary/20 transition-all" data-i18n="applyNow">Подать заявку</button>
-</div>
+    <!-- Card 1 -->
+    <div class="p-8 group cursor-pointer glass-card rounded-xl">
+        <!-- Добавлено group-hover:text-white -->
+        <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+            <span class="material-symbols-outlined text-3xl">business_center</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="consulting">Бизнес и Консалтинг</h3>
+        <p class="text-sm text-slate-500">12 <span data-i18n="activeOrgs">действующих организаций</span></p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="p-8 group cursor-pointer glass-card rounded-xl border-x border-outline-variant/10 bg-white/[0.02]">
+        <!-- Добавлено group-hover:text-white -->
+        <div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6 group-hover:bg-tertiary group-hover:text-white transition-all duration-500">
+            <span class="material-symbols-outlined text-3xl">developer_board</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="techHub">Технологический Хаб</h3>
+        <p class="text-sm text-slate-500">8 <span data-i18n="itAssoc">ИТ-ассоциаций</span></p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="glass-card p-8 rounded-xl group hover:bg-surface-container-highest/60 transition-all cursor-pointer md:col-span-2">
+        <div class="flex h-full gap-8">
+            <div class="flex-1">
+                <!-- Добавлено group-hover:text-white -->
+                <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-500">
+                    <span class="material-symbols-outlined text-3xl">account_balance</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="finance">Финансовый Сектор</h3>
+                <p class="text-xs text-slate-600 leading-tight" data-i18n="financeDesc">Банковское дело, микрофинансирование и финтех-инициативы на государственном уровне.</p>
+            </div>
+            <div class="hidden sm:block w-48 rounded-lg overflow-hidden grayscale group-hover:grayscale-0 transition-all">
+                <img alt="Banking" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0UG32jeM7Sgpxots3t-HFJSs_yDCAuZoFu4lFYFPmOrckiddiRMMMkJbmzv810lTOIggDhI87CNoDdzbkkAlPbFhJJsNPSGAdrzk5Lk4JgpGlLL5Tt12hcWWqTfz-546Fpm-ReF9Rav9BiJpdgUZ00ruwcgWO-KV80usIUfSIFiQWqXC_vWPMLx_iWGIlar2Vrbwsn9OAnTX3MF7WwvH-Zv6gAafO9ZiQ_7gJGUTgU-VrnZSHriyJw55JdaEvjUfd17ABs5-Xtn8"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4 (Исправлен размер для симметрии) -->
+    <div class="p-8 group cursor-pointer glass-card rounded-xl">
+        <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center text-slate-400 mb-6 group-hover:bg-white group-hover:text-slate-900 transition-all duration-500">
+            <span class="material-symbols-outlined text-3xl">factory</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" data-i18n="industry">Промышленность</h3>
+        <p class="text-sm text-slate-500" data-i18n="heavyIndustry">Тяжелое машиностроение</p>
+    </div>
+
+    <!-- Card 5 (Исправлен стиль иконки под остальные) -->
+    <div class="glass-card p-8 rounded-xl group hover:bg-surface-container-highest/60 transition-all cursor-pointer">
+        <div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6 group-hover:bg-tertiary group-hover:text-white transition-all duration-500">
+            <span class="material-symbols-outlined text-3xl">school</span>
+        </div>
+        <h3 class="font-headline text-xl font-bold mb-3 group-hover:text-primary transition-colors">Образование</h3>
+        <p class="text-sm text-on-surface-variant mb-6">Edu-Tech и университеты</p>
+        <div class="flex -space-x-3">
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-700">E</div>
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-700">D</div>
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-700">U</div>
+        </div>
+    </div>
+
+    <!-- Card 6 (CTA) -->
+    <div class="bg-primary/5 rounded-[2.5rem] p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/20 md:col-span-2">
+        <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold mb-2" data-i18n="joinUsTitle">Ваша ассоциация еще не с нами?</h3>
+            <p class="text-slate-400" data-i18n="joinUsDesc">Присоединяйтесь к крупнейшему экономическому сообществу страны.</p>
+        </div>
+        <button class="bg-primary text-white px-10 py-4 rounded-2xl font-bold hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95" data-i18n="applyNow">
+            Подать заявку
+        </button>
+    </div>
 </div>
 </section>
 <!-- Membership Levels -->
