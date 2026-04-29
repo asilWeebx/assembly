@@ -964,8 +964,9 @@ window.I18N = {
     uz: { title: "Admin panel", loginBtn: "Kirish", logoutBtn: "Chiqish" },
     en: { title: "Admin Panel", loginBtn: "Sign in", logoutBtn: "Sign out" }
   },
-  news: {
+news: {
     ru: {
+      pageTitle: "Новости | Economic Assembly", // Добавлено
       heroOverline: "Пресс-центр Ассамблеи",
       heroTitle: "Экономика в Движении",
       heroText: "Главные события, аналитические обзоры и стратегические решения, формирующие бизнес-ландшафт Узбекистана.",
@@ -973,6 +974,7 @@ window.I18N = {
       readMore: "Подробнее"
     },
     uz: {
+      pageTitle: "Yangiliklar | Economic Assembly", // Добавлено
       heroOverline: "Assambleya matbuot markazi",
       heroTitle: "Iqtisodiyot Harakatda",
       heroText: "O'zbekiston biznes landshaftini shakllantiruvchi asosiy voqealar, tahliliy sharhlar va strategik qarorlar.",
@@ -980,6 +982,7 @@ window.I18N = {
       readMore: "Batafsil"
     },
     en: {
+      pageTitle: "News | Economic Assembly", // Добавлено
       heroOverline: "Assembly Press Center",
       heroTitle: "Economy in Motion",
       heroText: "Key events, analytical reviews, and strategic decisions shaping Uzbekistan's business landscape.",
