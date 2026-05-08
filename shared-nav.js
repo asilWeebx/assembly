@@ -144,7 +144,9 @@
   });
 
   document.body.prepend(wrapper);
-  document.body.style.paddingTop = "80px";
+  // Nav is fixed: mobile ~96px, desktop ~128px. Use 96px to avoid excessive spacing.
+  // Pages already have pt-28/pt-32 for additional breathing room below the nav.
+  document.body.style.paddingTop = "96px";
 
   const icon = wrapper.querySelector("#globalThemeIcon");
   const btn = wrapper.querySelector("#globalThemeToggle");

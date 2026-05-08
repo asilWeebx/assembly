@@ -88,26 +88,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ══════════════════════════════════════════════════════════════
+  //  NEWS — LANGUAGE TABS
+  // ══════════════════════════════════════════════════════════════
+  document.querySelectorAll('[data-lang-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.langTab;
+
+      // Update tab styles
+      document.querySelectorAll('[data-lang-tab]').forEach(t => {
+        t.classList.remove('bg-primary', 'text-on-primary');
+        t.classList.add('text-on-surface-variant', 'hover:text-on-surface');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary');
+      btn.classList.remove('text-on-surface-variant', 'hover:text-on-surface');
+
+      // Show/hide panels
+      document.querySelectorAll('.news-lang-panel').forEach(p => p.classList.add('hidden'));
+      const panel = document.getElementById(`newsLang${lang.charAt(0).toUpperCase() + lang.slice(1)}`);
+      if (panel) panel.classList.remove('hidden');
+    });
+  });
+
+  // ══════════════════════════════════════════════════════════════
   //  NEWS — FORM
   // ══════════════════════════════════════════════════════════════
   document.getElementById('newsForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const fd        = new FormData(e.target);
     const imageFile = document.getElementById('newsImage')?.files[0];
-    const btn       = e.target.querySelector('button');
+    const btn       = e.target.querySelector('button[type="submit"], button:not([type="button"])');
     const origHTML  = btn.innerHTML;
 
     btn.disabled = true;
     btn.innerHTML = '<span class="opacity-60">Публикация...</span>';
 
     const payload = new FormData();
-    payload.append('title',   fd.get('title'));
-    payload.append('content', fd.get('content'));
+    payload.append('title',      fd.get('title')      || '');
+    payload.append('content',    fd.get('content')    || '');
+    payload.append('title_uz',   fd.get('title_uz')   || '');
+    payload.append('content_uz', fd.get('content_uz') || '');
+    payload.append('title_en',   fd.get('title_en')   || '');
+    payload.append('content_en', fd.get('content_en') || '');
     if (imageFile) payload.append('image', imageFile);
 
     try {
       await Api.createNews(payload);
       e.target.reset();
+      // Reset tabs back to RU
+      document.querySelector('[data-lang-tab="ru"]')?.click();
       await loadNews();
     } catch (err) {
       if (err.message.includes('401') || err.message.toLowerCase().includes('unauthorized')) {

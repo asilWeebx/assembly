@@ -3,8 +3,15 @@
   --on-background: #e2e8f0;
   --surface: #0a1329;
   --on-surface: #f1f5f9;
+  --surface-dim: #080f22;
+  --surface-bright: #152036;
   --surface-variant: #1e293b;
   --on-surface-variant: #94a3b8;
+  --surface-container-lowest: #060b19;
+  --surface-container-low: #0d1630;
+  --surface-container: #111d35;
+  --surface-container-high: #1e293b;
+  --surface-container-highest: #334155;
   --primary: #3b82f6;
   --on-primary: #ffffff;
   --primary-container: #1e3a8a;
@@ -16,8 +23,6 @@
   --navy-900: #051024;
   --navy-800: #0b1a38;
   --on-navy: #ffffff;
-  --surface-container-high: #1e293b;
-  --surface-container-highest: #334155;
 }
 
 /* Ensure html.dark follows variables */
@@ -26,6 +31,13 @@ html.dark {
   --on-background: #e2e8f0;
   --surface: #0a1329;
   --on-surface: #f1f5f9;
+  --surface-dim: #080f22;
+  --surface-bright: #152036;
+  --surface-container-lowest: #060b19;
+  --surface-container-low: #0d1630;
+  --surface-container: #111d35;
+  --surface-container-high: #1e293b;
+  --surface-container-highest: #334155;
   --navy-900: #051024;
   --navy-800: #0b1a38;
   --on-navy: #ffffff;
@@ -36,21 +48,26 @@ body.light-mode, html:not(.dark) body {
   --on-background: #0f172a;
   --surface: #ffffff;
   --on-surface: #0f172a;
+  --surface-dim: #f1f5f9;
+  --surface-bright: #ffffff;
   --surface-variant: #eeeff3;
   --on-surface-variant: #475569;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f8fafc;
+  --surface-container: #f1f5f9;
+  --surface-container-high: #e8ecf0;
+  --surface-container-highest: #e2e8f0;
   --primary: #1d4ed8;
   --on-primary: #ffffff;
   --primary-container: #dbeafe;
   --on-primary-container: #1e40af;
   --secondary: #64748b;
   --tertiary: #d97706;
-  --outline: #cbd5e1;
-  --outline-variant: #f1f5f9;
+  --outline: #94a3b8;
+  --outline-variant: #e2e8f0;
   --navy-900: #ffffff;
   --navy-800: #f1f5f9;
   --on-navy: #0f172a;
-  --surface-container-high: #f1f5f9;
-  --surface-container-highest: #e2e8f0;
 }
 
 body {
@@ -144,17 +161,31 @@ body.light-mode .text-gradient {
   -webkit-text-fill-color: transparent;
 }
 
+/* Surface container utility classes (for pages that use MD3 tokens not in Tailwind config) */
+.bg-surface-dim { background-color: var(--surface-dim) !important; }
+.bg-surface-bright { background-color: var(--surface-bright) !important; }
+.bg-surface-container-lowest { background-color: var(--surface-container-lowest) !important; }
+.bg-surface-container-low { background-color: var(--surface-container-low) !important; }
+.bg-surface-container { background-color: var(--surface-container) !important; }
+.text-surface-dim { color: var(--surface-dim); }
+
 /* Custom Input Styles */
 input, textarea, select {
   background-color: var(--surface) !important;
   color: var(--on-surface) !important;
-  border: 1px solid var(--outline-variant) !important;
+  border: 1px solid var(--outline) !important;
   transition: all 0.2s ease;
 }
 
 input:focus, textarea:focus, select:focus {
   border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px var(--primary-container) !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15) !important;
+  outline: none !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--on-surface-variant) !important;
+  opacity: 0.7;
 }
 
 .btn-primary {

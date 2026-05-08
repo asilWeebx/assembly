@@ -54,7 +54,7 @@
     </style>
   </head>
   <body class="bg-background text-on-surface font-body overflow-x-hidden">
-    <main class="max-w-screen-xl mx-auto px-6 md:px-12 pt-32 pb-20">
+    <main class="max-w-screen-xl mx-auto px-6 md:px-12 pt-8 pb-20">
       <div class="relative z-10 max-w-4xl mb-16">
         <p class="font-headline uppercase tracking-[0.3em] text-[10px] text-primary font-bold mb-6" data-i18n="heroOverline">Пресс-центр Ассамблеи</p>
         <h1 class="font-headline text-5xl md:text-8xl font-black leading-[0.95] tracking-tighter mb-8" data-i18n="heroTitle">
@@ -79,10 +79,10 @@
     </main>
 
     <!-- News Modal -->
-    <div id="newsModal" class="fixed inset-0 z-[100] hidden">
-      <div class="absolute inset-0 bg-background/60 backdrop-blur-md" id="modalOverlay"></div>
-      <div class="absolute inset-x-4 md:inset-x-0 top-[10%] md:top-[15%] mx-auto max-w-2xl bg-surface border border-outline-variant/20 rounded-[2rem] shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
-        <div class="relative h-64 md:h-80 overflow-hidden" id="modalImageContainer">
+    <div id="newsModal" class="fixed inset-0 z-[100] hidden overflow-y-auto">
+      <div class="fixed inset-0 bg-background/80 backdrop-blur-md" id="modalOverlay"></div>
+      <div class="relative mx-4 md:mx-auto my-8 md:my-12 max-w-2xl bg-surface border border-outline-variant/20 rounded-[2rem] shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+        <div class="relative h-64 md:h-80 overflow-hidden shrink-0" id="modalImageContainer">
           <img src="" alt="" class="w-full h-full object-cover" id="modalImage" />
           <button id="closeModal" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-on-navy flex items-center justify-center backdrop-blur-md hover:bg-black/70 transition-all">
             <span class="material-symbols-outlined">close</span>
@@ -113,7 +113,14 @@
     } catch (e) {
       console.error('News fetch error:', e);
     }
- 
+
+    const getLangField = (item, field) => {
+      const lang = localStorage.getItem('ea_lang') || 'ru';
+      if (lang === 'uz' && item[field + '_uz']) return item[field + '_uz'];
+      if (lang === 'en' && item[field + '_en']) return item[field + '_en'];
+      return item[field] || '';
+    };
+
     if (!news.length) {
       empty.classList.remove("hidden");
     } else {
@@ -126,7 +133,7 @@
             ${item.image_url ? `
               <img
                 src="${item.image_url}"
-                alt="${item.title}"
+                alt="${getLangField(item, 'title')}"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
             ` : `
@@ -143,10 +150,10 @@
           </div>
           <div class="p-8 flex flex-col flex-grow">
             <h3 class="font-headline text-2xl font-black mb-4 group-hover:text-primary transition-colors duration-300 leading-tight">
-              ${item.title}
+              ${getLangField(item, 'title')}
             </h3>
             <p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-custom flex-grow">
-              ${item.content}
+              ${getLangField(item, 'content')}
             </p>
             <div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest mt-auto group-hover:gap-4 transition-all duration-300">
               <span data-i18n="readMore">Подробнее</span>
@@ -155,20 +162,20 @@
           </div>
         </article>
       `).join("");
- 
+
       if (window.applyTranslations) window.applyTranslations(localStorage.getItem("ea_lang") || "ru");
     }
- 
+
     // ─── Modal ────────────────────────────────────────────────
     const modal = document.getElementById("newsModal");
     const modalContent = document.getElementById("modalContent");
- 
+
     window.openNewsModal = (idx) => {
       const item = news[idx];
       if (!item) return;
- 
-      document.getElementById("modalTitle").textContent = item.title;
-      document.getElementById("modalBody").textContent = item.content;
+
+      document.getElementById("modalTitle").textContent = getLangField(item, 'title');
+      document.getElementById("modalBody").textContent = getLangField(item, 'content');
       document.getElementById("modalDate").textContent = item.date || "";
  
       const mImg = document.getElementById("modalImage");
@@ -181,13 +188,14 @@
       }
  
       modal.classList.remove("hidden");
+      modal.scrollTop = 0;
+      document.body.style.overflow = "hidden";
       setTimeout(() => {
         modalContent.classList.remove("scale-95", "opacity-0");
         modalContent.classList.add("scale-100", "opacity-100");
       }, 10);
-      document.body.style.overflow = "hidden";
     };
- 
+
     const closeMod = () => {
       modalContent.classList.add("scale-95", "opacity-0");
       modalContent.classList.remove("scale-100", "opacity-100");
@@ -196,7 +204,10 @@
     };
  
     document.getElementById("closeModal").onclick = closeMod;
-    document.getElementById("modalOverlay").onclick = closeMod;
+    // Close only when clicking the backdrop (not the content card)
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeMod();
+    });
   });
 </script>
     <script src="./i18n.js"></script>

@@ -66,18 +66,44 @@ function renderServices() {
     .join("");
 }
 
-function renderNews() {
-  const news = readJSON(STORAGE_KEYS.news, []);
+async function renderNews() {
   const root = document.getElementById("newsList");
+  if (!root) return;
+
+  let news = [];
+  try {
+    news = await Api.getNews();
+  } catch (e) {
+    news = readJSON(STORAGE_KEYS.news, []);
+  }
+
+  if (!news.length) {
+    root.innerHTML = '<p class="text-on-surface-variant col-span-2">Новостей пока нет.</p>';
+    return;
+  }
+
+  const lang = localStorage.getItem('ea_lang') || 'ru';
+
   root.innerHTML = news
+    .slice(0, 4)
     .map(
-      (item) => `
-      <article class="glass-card rounded-[1.7rem] p-7">
-        <p class="text-xs uppercase tracking-widest text-tertiary mb-2">${item.date || ""}</p>
-        <h3 class="font-headline text-2xl font-bold mb-3">${item.title}</h3>
-        <p class="text-on-surface-variant">${item.content}</p>
-        <a href="${item.href || "./news.html"}" class="inline-block mt-4 text-sm text-tertiary">Читать подробнее</a>
-      </article>`
+      (item) => {
+        const title   = (lang === 'uz' && item.title_uz)   ? item.title_uz   : (lang === 'en' && item.title_en)   ? item.title_en   : item.title;
+        const content = (lang === 'uz' && item.content_uz) ? item.content_uz : (lang === 'en' && item.content_en) ? item.content_en : item.content;
+        return `
+        <article class="glass-card rounded-[1.7rem] overflow-hidden flex flex-col group">
+          ${item.image_url
+            ? `<div class="h-48 overflow-hidden shrink-0"><img src="${item.image_url}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/></div>`
+            : ``
+          }
+          <div class="p-7 flex flex-col flex-1">
+            <p class="text-xs uppercase tracking-widest text-tertiary mb-2">${item.date || ""}</p>
+            <h3 class="font-headline text-xl font-bold mb-3">${title}</h3>
+            <p class="text-on-surface-variant text-sm line-clamp-3 flex-1">${content}</p>
+            <a href="./news.html" class="inline-block mt-4 text-sm text-primary font-semibold" data-i18n="readMore">Читать подробнее →</a>
+          </div>
+        </article>`;
+      }
     )
     .join("");
 }
@@ -88,8 +114,8 @@ function initModal() {
   const closeBtn = document.getElementById("closeRequestModal");
   const form = document.getElementById("requestForm");
 
-  openBtn.addEventListener("click", () => modal.classList.remove("hidden"));
-  openBtn.addEventListener("click", () => modal.classList.add("flex"));
+  openBtn?.addEventListener("click", () => modal.classList.remove("hidden"));
+  openBtn?.addEventListener("click", () => modal.classList.add("flex"));
   closeBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
     modal.classList.remove("flex");
@@ -116,4 +142,4 @@ function initModal() {
 
 ensureDefaults();
 renderNews();
-initModal();
+if (document.getElementById("requestModal")) initModal();
