@@ -856,7 +856,8 @@ window.I18N = {
       ourOffice: "Наш офис",
       officeDesc: "Бизнес-центр премиум-класса, расположенный в самом сердце делового Ташкента.",
       getDirections: "Проложить маршрут",
-      placeholderName: "Иван Иванов"
+      placeholderName: "Иван Иванов",
+      mapLabel: "Наше расположение"
     },
     uz: {
       pageTitle: "Kontaktlar — O'zbekiston Iqtisodiy Assambleyasi",
@@ -903,7 +904,8 @@ window.I18N = {
       ourOffice: "Bizning ofis",
       officeDesc: "Toshkent ishbilarmonlik markazida joylashgan premium-klassdagi biznes markazi.",
       getDirections: "Yo'nalishni ko'rish",
-      placeholderName: "Ivan Ivanov"
+      placeholderName: "Ivan Ivanov",
+      mapLabel: "Bizning joylashuvimiz"
     },
     en: {
       pageTitle: "Contacts — Economic Assembly of Uzbekistan",
@@ -932,7 +934,8 @@ window.I18N = {
       ourOffice: "Our Office",
       officeDesc: "A premium business center located in the heart of business Tashkent.",
       getDirections: "Get Directions",
-      placeholderName: "John Doe"
+      placeholderName: "John Doe",
+      mapLabel: "Our Location"
     }
   },
   admin: {
