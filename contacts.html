@@ -164,15 +164,14 @@ tailwind.config = {
 <!-- Map Section -->
 <div class="mt-12">
   <p class="font-label text-[10px] uppercase tracking-widest text-primary mb-4" data-i18n="mapLabel">Наше расположение</p>
-  <div class="rounded-xl overflow-hidden border border-outline-variant/20" style="height:420px;">
+  <div class="rounded-xl overflow-hidden border border-outline-variant/20 w-full" style="height: clamp(260px, 50vw, 480px);">
     <iframe
-      src="https://yandex.uz/maps/-/CPgzfHjo?embed=1"
+      src="https://yandex.uz/map-widget/v1/-/CPgznLOk"
       width="100%"
       height="100%"
       frameborder="0"
-      allowfullscreen
-      style="border:0;"
-      loading="lazy"
+      allowfullscreen="true"
+      style="border:0; display:block;"
     ></iframe>
   </div>
 </div>
