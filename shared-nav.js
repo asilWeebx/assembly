@@ -104,7 +104,7 @@
   // Remove old themeStyle injection and replace with cleaner logic
   const wrapper = document.createElement("header");
   wrapper.className =
-    "shared-nav-wrapper fixed top-0 w-full z-[60] bg-background/80 backdrop-blur-xl border-b border-outline-variant/15 transition-colors duration-300";
+    "shared-nav-wrapper fixed top-0 w-full z-[60] bg-background/80 backdrop-blur-xl transition-colors duration-300";
   wrapper.innerHTML = `
     <div class="max-w-screen-2xl mx-auto px-4 md:px-12 py-4 flex items-center justify-between gap-3">
       <div class="flex items-center gap-2">
