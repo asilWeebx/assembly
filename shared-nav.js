@@ -40,7 +40,6 @@
     { href: "./index.html", key: "navHome" },
     { href: "./about.html", key: "navAbout" },
     { href: "./services.html", key: "navServices" },
-    { href: "associations.html", key: "navAssociations" },
     { href: "projects.html", key: "navProjects" },
     { href: "news.html", key: "navNews" },
     { href: "contacts.html", key: "navContacts" }
